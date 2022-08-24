@@ -1,8 +1,9 @@
 import { storageService } from '../../../services/storage.service.js'
 import { utilService } from '../../../services/util.service.js'
 
-export const notesService = {
-    query
+export const NoteService = {
+    query,
+    remove
 }
 
 const STORAGE_KEY = 'notesDB'
@@ -50,10 +51,21 @@ function query() {
     return Promise.resolve(notes)
 }
 
+function remove(noteId) {
+    console.log('noteId:', noteId)
+    let notes = _loadNotesFromStorage()
+    console.log('notes:', notes)
+     notes = notes.filter(note => note.id !== noteId)
+    _saveNotesToStorage(notes)
+    return Promise.resolve()
+}
+
+
+
 function _saveNotesToStorage(notes) {
     storageService.saveToStorage(STORAGE_KEY, notes)
 }
 
 function _loadNotesFromStorage() {
-    storageService.loadFromStorage(STORAGE_KEY)
+   return storageService.loadFromStorage(STORAGE_KEY)
 }

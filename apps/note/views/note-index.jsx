@@ -1,4 +1,4 @@
-import { notesService } from '../services/note.service.js'
+import { NoteService } from '../services/note.service.js'
 import { NoteList } from '../cmps/note-list.jsx'
 import { NoteSideNav } from "../cmps/note-side-nav.jsx"
 
@@ -13,18 +13,35 @@ export class NoteIndex extends React.Component {
     }
 
     loadNotes = () => {
-        notesService.query()
+        NoteService.query()
             .then(notes => this.setState({ notes }))
+    }
+
+    // onAddNote = () => {
+        
+    // }
+
+    onRemoveNote = (noteId) => {
+        console.log('noteId:', noteId)
+        NoteService.remove(noteId)
+            .then(() => {
+                console.log('removed:')
+                const notes = this.state.notes.filter(note => note.id !== noteId)
+                this.setState({ notes }
+                )
+            })
     }
 
 
     render() {
         const { notes } = this.state
-        if(!notes) return <div>Loading...</div>
+        const { onRemoveNote, onAddNote } = this
+        if (!notes) return <div>Loading...</div>
         return (
             <section className="flex notes-index">
                 <NoteSideNav />
-                <NoteList notes={notes}/>
+                <NoteList notes={notes} onRemoveNote={onRemoveNote} />
+                <NoteAdd onAddNote={onAddNote}
             </section>
 
         )
