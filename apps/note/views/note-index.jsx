@@ -1,4 +1,4 @@
-import { notesService } from "../services/note.service.js"
+import { notesService } from '../services/note.service.js'
 
 export class NoteIndex extends React.Component {
 
@@ -7,28 +7,28 @@ export class NoteIndex extends React.Component {
     }
 
     componentDidMount() {
-        this.loadNoted()
+        this.loadNotes()
     }
 
     loadNotes = () => {
         notesService.query()
             .then(notes => this.setState({ notes }))
+            console.log('notes:', notes)
     }
 
 
     render() {
         const { notes } = this.state
         if(!notes) return <div>Loading...</div>
-
         return (
             <section className="notes-index">
                 <NoteList />
             </section>
 
-
         )
     }
 }
+
 
 
 
