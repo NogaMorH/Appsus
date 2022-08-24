@@ -1,5 +1,6 @@
 import { notesService } from '../services/note.service.js'
 import { NoteList } from '../cmps/note-list.jsx'
+import { NoteSideNav } from "../cmps/note-side-nav.jsx"
 
 export class NoteIndex extends React.Component {
 
@@ -21,7 +22,8 @@ export class NoteIndex extends React.Component {
         const { notes } = this.state
         if(!notes) return <div>Loading...</div>
         return (
-            <section className="notes-index">
+            <section className="flex notes-index">
+                <NoteSideNav />
                 <NoteList notes={notes}/>
             </section>
 

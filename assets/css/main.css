@@ -30,3 +30,4 @@
 /* Notes cmps */
 @import './apps/note/cmps/note-list.css';
 @import './apps/note/cmps/note-preview.css';
+@import './apps/mail/cmps/note-side-nav.css';
