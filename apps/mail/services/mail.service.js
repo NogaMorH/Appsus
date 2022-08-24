@@ -13,7 +13,11 @@ const gMails = [
         body: 'Would love to catch up sometimes',
         isRead: false,
         sentAt: 1551133930594,
-        to: 'momo@momo.com'
+        to: 'momo@momo.com',
+        from: {
+            senderName: 'Lulu',
+            senderAddress: 'lulu@lulu.com'
+        }
     },
     {
         id: utilService.makeId(),
@@ -21,7 +25,11 @@ const gMails = [
         body: 'You are the newest member in this community of over 83 million people who use GitHub to host and review code, manage projects, and build software. Get started!',
         isRead: true,
         sentAt: 1551133930987,
-        to: 'momo@momo.com'
+        to: 'momo@momo.com',
+        from: {
+            senderName: 'Github',
+            senderAddress: 'noreply@github.com'
+        }
     },
     {
         id: utilService.makeId(),
@@ -29,7 +37,11 @@ const gMails = [
         body: 'Are you coming?',
         isRead: true,
         sentAt: 1551133930562,
-        to: 'momo@momo.com'
+        to: 'momo@momo.com',
+        from: {
+            senderName: 'Eliyahu',
+            senderAddress: 'eliyahu@gmail.com'
+        }
     }
 ]
 
