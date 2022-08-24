@@ -1,10 +1,12 @@
-import { utilService } from '../../../services/util.service'
+import { utilService } from '../../../services/util.service.js'
+import { storageService } from '../../../services/storage.service.js'
 
 export {
     query
 }
 
-gMails = [
+const STORAGE_KEY = 'mailsDb'
+const gMails = [
     {
         id: utilService.makeId(),
         subject: 'Miss you!',
@@ -32,5 +34,20 @@ gMails = [
 ]
 
 function query() {
+    let mails = _loadMailsFromStorage()
+    if (!mails) {
+        mails = gMails
+        _SaveMailsToStorage(mails)
+    }
+    return Promise.resolve(mails)
+}
 
+function _loadMailsFromStorage() {
+    const { loadFromStorage } = storageService
+    loadFromStorage(STORAGE_KEY)
+}
+
+function _SaveMailsToStorage(mails) {
+    const { saveToStorage } = storageService
+    saveToStorage(STORAGE_KEY, mails)
 }
