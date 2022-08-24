@@ -31,6 +31,11 @@ export class NoteIndex extends React.Component {
             })
     }
 
+    // onAddNote = (newNote) => {
+    //     NoteService.addNote(newNote)
+    //         .then(this.setState({notes: [newNote, ...this.state.notes]})
+    // )}
+
 
     render() {
         const { notes } = this.state
@@ -40,7 +45,7 @@ export class NoteIndex extends React.Component {
             <section className="flex notes-index">
                 <NoteSideNav />
                 <NoteList notes={notes} onRemoveNote={onRemoveNote} />
-                <NoteAdd onAddNote={onAddNote} />
+                {/* <NoteAdd onAddNote={onAddNote} /> */}
             </section>
 
         )

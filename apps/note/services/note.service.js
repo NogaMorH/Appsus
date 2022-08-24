@@ -4,7 +4,8 @@ import { utilService } from '../../../services/util.service.js'
 export const NoteService = {
     query,
     remove,
-    createNote
+    createNote,
+    // addNote
 }
 
 const STORAGE_KEY = 'notesDB'
@@ -60,6 +61,14 @@ function remove(noteId) {
     _saveNotesToStorage(notes)
     return Promise.resolve()
 }
+
+// function addNote({ title, text, type, url }){
+//     let notes = _loadNotesFromStorage()
+//     const note = createNote({ title, text, type, url })
+//     notes = [note, ...notes]
+//     _saveNotesToStorage(notes)
+//     return Promise.resolve(note)
+// }
 
 function createNote({ title, text, type, url }) {
     let notes = _loadNotesFromStorage()
