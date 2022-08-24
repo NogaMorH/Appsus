@@ -1,4 +1,5 @@
 import { notesService } from '../services/note.service.js'
+import { NoteList } from '../cmps/note-list.jsx'
 
 export class NoteIndex extends React.Component {
 
@@ -13,7 +14,6 @@ export class NoteIndex extends React.Component {
     loadNotes = () => {
         notesService.query()
             .then(notes => this.setState({ notes }))
-            console.log('notes:', notes)
     }
 
 
@@ -22,7 +22,7 @@ export class NoteIndex extends React.Component {
         if(!notes) return <div>Loading...</div>
         return (
             <section className="notes-index">
-                <NoteList />
+                <NoteList notes={notes}/>
             </section>
 
         )
