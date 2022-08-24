@@ -1,4 +1,4 @@
-header {
+.app-header-container {
     background: lightcyan;
     border-bottom: 2px solid white;
 }
@@ -6,18 +6,13 @@ header {
 .app-header {
     display: flex;
     justify-content: space-between;
-    padding: 20px 0;
 }
 
-nav a {
+.app-header .app-nav a {
     margin: .5em;
 }
 
-nav a:active {
-    color: purple;
-}
-
-nav a.active {
+.app-header .app-nav a.active {
     color: darkblue;
     font-weight: bold;
     text-decoration: overline;
