@@ -10,10 +10,10 @@ const STORAGE_KEY = 'notesDB'
 const gNotes = [
     {
         id: utilService.makeId(),
-        type: 'note-txt',
+        type: 'note-text',
         isPinned: true,
         info: {
-            txt: 'Fullstack Me Baby!'
+            text: 'Fullstack Me Baby!'
         }
     },
     {
@@ -32,8 +32,8 @@ const gNotes = [
         type: 'note-todos',
         info: {
             label: 'Get my stuff together', todos: [
-                { txt: 'Driving liscence', doneAt: null },
-                { txt: 'Coding power', doneAt: 187111111 }
+                { text: 'Driving liscence', doneAt: null },
+                { text: 'Coding power', doneAt: 187111111 }
             ]
         }
     }
@@ -50,7 +50,7 @@ function query() {
 }
 
 function _saveNotesToStorage(notes) {
-    storageService.saveToStorage(STORAGE_KEY, gNotes)
+    storageService.saveToStorage(STORAGE_KEY, notes)
 }
 
 function _loadNotesFromStorage() {
