@@ -5,11 +5,11 @@
 
     --clr1: #f2f6fb;
 
-    /* side nav-bar bg color: */
+    /* side and top nav-bar bg color: */
 
     --clr2: #f7f8fc;
 
-    /* compose and on page color: */
+    /* compose and selected page color: */
 
     --clr3: #c1e7fe;
 
@@ -23,6 +23,41 @@
 
     /* Text color: */
     --clr6: #202124;
+
+
+    /* Google Keep */
+
+    /* bg color: */
+
+    --var7: #ffffff;
+    
+    /* selected page color: */
+
+    --var8: #fdefc3;
+
+    /* text color: */
+
+    --var9: #4c4c4c;
+
+    /* search input color & hover on nav-bar: */
+
+    --var10: #f0f3f4;
+
+    /* grey box shadow inside note  color: */
+
+    --var11: #e1e1e1
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 }
