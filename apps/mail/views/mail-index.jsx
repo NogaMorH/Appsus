@@ -1,5 +1,6 @@
 import { mailService } from '../services/mail.service.js'
 import { MailList } from "../cmps/mail-list.jsx"
+import { MailSideNav } from "../cmps/mail-side-nav.jsx"
 
 export class MailIndex extends React.Component {
 
@@ -21,7 +22,8 @@ export class MailIndex extends React.Component {
     render() {
         const { mails } = this.state
         if (!mails) return <div></div>
-        return <section className="mail-index">
+        return <section className="flex mail-index">
+            <MailSideNav />
             <MailList mails={mails} />
         </section>
     }
