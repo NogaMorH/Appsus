@@ -1,8 +1,10 @@
 export function MailPreview({ mail }) {
-    const { subject, body } = mail
-    return <li>
-        <div>{subject}</div>
-        {/* <div>{body}</div> */}
-        {/* <div></div> */}
+    const { subject, from, body } = mail
+    const { senderName } = from
+    return <li className="mail-preview">
+        <span>icons</span>
+        <span>{senderName}</span>
+        <span>{subject} - {body}</span>
+        <span>time</span>
     </li>
 }

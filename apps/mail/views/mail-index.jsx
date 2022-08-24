@@ -14,7 +14,6 @@ export class MailIndex extends React.Component {
     loadMails() {
         mailService.query()
             .then(mails => {
-                console.log('mails:', mails)
                 this.setState({ mails })
             })
     }
