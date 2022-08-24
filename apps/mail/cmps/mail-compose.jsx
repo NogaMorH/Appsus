@@ -1,5 +1,7 @@
 export class MailCompose extends React.Component {
     render() {
-        return
+        return <section className="mail-compose">
+            <input type="text" required />
+        </section>
     }
 }
