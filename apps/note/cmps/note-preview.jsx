@@ -1,3 +1,5 @@
 export function NotePreview() {
-    return
+    return <article className="note-preview">
+        
+    </article>
 }
