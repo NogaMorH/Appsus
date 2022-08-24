@@ -1,17 +1,21 @@
+const { Link } = ReactRouterDOM
+
+
 export function NotePreview({ note }) {
     console.log('note:', note)
-        const{ text } = note.info
+    const { text, url, title } = note.info
     return <article className="note-preview">
-        {text}
+        <Link to={"/keep/" + note.id}>
+            <p>{text}</p>
+            <h3>{title}</h3>
+            <img src={url} />
+        </Link>
+        <div>
+            {/* buttons */}
+        </div>
+
     </article>
 }
 
-// {
-    // {
-    //     id: utilService.makeId(),
-    //         type: 'note-text',
-    //             isPinned: true,
-    //                 info: {
-    //         text: 'Fullstack Me Baby!'
-    //     }
-    // },
+
+
