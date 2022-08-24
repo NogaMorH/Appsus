@@ -1,5 +1,5 @@
-import { storageService } from '../services/storage.service.js'
-import { utilService } from '../services/util.service.js'
+import { storageService } from '../../../storage.service'
+import { utilService } from '../../../services/util.service'
 
 export const notesService = {
     query
@@ -7,9 +7,9 @@ export const notesService = {
 
 const STORAGE_KEY = 'notesDB'
 
-const notes = [
+const gNotes = [
     {
-        id: 'n101',
+        id: utilService.makeId(),
         type: 'note-txt',
         isPinned: true,
         info: {
@@ -17,7 +17,7 @@ const notes = [
         }
     },
     {
-        id: 'n102',
+        id: utilService.makeId(),
         type: 'note-img',
         info: {
             url: 'http://some-img/me',
@@ -28,7 +28,7 @@ const notes = [
         }
     },
     {
-        id: 'n103',
+        id: utilService.makeId(),
         type: 'note-todos',
         info: {
             label: 'Get my stuff together', todos: [
@@ -42,26 +42,15 @@ const notes = [
 function query() {
     let notes = _loadNotesFromStorage()
     if (!notes) {
-        notes = _createNotes()
+        notes = gNotes
         _saveNotesToStorage(notes)
     }
+
     return Promise.resolve(notes)
 }
 
-function _createNotes() {
-    const notes = []
-    for (let i = 0; i < 5; i++) {
-        const note = {
-            id: utilService.makeId(4),
-            type: 'note-text',
-            isPinned: false
-
-        }
-    }
-}
-
 function _saveNotesToStorage(notes) {
-    storageService.saveToStorage(STORAGE_KEY, notes)
+    storageService.saveToStorage(STORAGE_KEY, gNotes)
 }
 
 function _loadNotesFromStorage() {
