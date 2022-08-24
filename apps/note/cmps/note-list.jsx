@@ -1,3 +1,3 @@
-export function NoteTrash() {
+export function NoteList() {
     return
 }
