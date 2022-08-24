@@ -13,10 +13,17 @@ export class MailIndex extends React.Component {
 
     loadMails() {
         mailService.query()
-            .then((mails) => this.setState({ mails }))
+            .then(mails => {
+                console.log('mails:', mails)
+                this.setState({ mails })
+            })
     }
 
     render() {
-        return <MailList mails={mails} />
+        const { mails } = this.state
+        if (!mails) return <div></div>
+        return <section className="mail-index">
+            <MailList mails={mails} />
+        </section>
     }
 }
