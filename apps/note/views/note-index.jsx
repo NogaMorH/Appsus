@@ -1,6 +1,9 @@
 import { NoteService } from '../services/note.service.js'
 import { NoteList } from '../cmps/note-list.jsx'
 import { NoteSideNav } from "../cmps/note-side-nav.jsx"
+import { NoteAdd } from '../cmps/note-add.jsx'
+
+
 
 export class NoteIndex extends React.Component {
 
@@ -16,10 +19,6 @@ export class NoteIndex extends React.Component {
         NoteService.query()
             .then(notes => this.setState({ notes }))
     }
-
-    // onAddNote = () => {
-        
-    // }
 
     onRemoveNote = (noteId) => {
         console.log('noteId:', noteId)
@@ -41,7 +40,7 @@ export class NoteIndex extends React.Component {
             <section className="flex notes-index">
                 <NoteSideNav />
                 <NoteList notes={notes} onRemoveNote={onRemoveNote} />
-                <NoteAdd onAddNote={onAddNote}
+                <NoteAdd onAddNote={onAddNote} />
             </section>
 
         )
