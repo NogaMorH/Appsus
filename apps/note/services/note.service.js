@@ -1,5 +1,5 @@
-import { storageService } from '../../../storage.service'
-import { utilService } from '../../../services/util.service'
+import { storageService } from '../../../services/storage.service.js'
+import { utilService } from '../../../services/util.service.js'
 
 export const notesService = {
     query
