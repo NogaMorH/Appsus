@@ -56,7 +56,7 @@ function query() {
 
 function _loadMailsFromStorage() {
     const { loadFromStorage } = storageService
-    loadFromStorage(STORAGE_KEY)
+    return loadFromStorage(STORAGE_KEY)
 }
 
 function _SaveMailsToStorage(mails) {

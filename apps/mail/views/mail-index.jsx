@@ -1,11 +1,13 @@
 import { mailService } from '../services/mail.service.js'
 import { MailList } from "../cmps/mail-list.jsx"
 import { MailSideNav } from "../cmps/mail-side-nav.jsx"
+import { MailCompose } from "../cmps/mail-compose.jsx"
 
 export class MailIndex extends React.Component {
 
     state = {
-        mails: null
+        mails: null,
+        composeOpened: false
     }
 
     componentDidMount() {
@@ -19,12 +21,17 @@ export class MailIndex extends React.Component {
             })
     }
 
+    composeMail = () => {
+        this.setState({ composeOpened: true })
+    }
+
     render() {
-        const { mails } = this.state
+        const { mails, composeOpened } = this.state
         if (!mails) return <div></div>
         return <section className="flex mail-index">
-            <MailSideNav />
+            <MailSideNav composeMail={this.composeMail} />
             <MailList mails={mails} />
+            {composeOpened && <MailCompose />}
         </section>
     }
 }
