@@ -1,0 +1,14 @@
+@font-face {
+    font-family: product-sans-light;
+    src: url(../../fonts/product-sans/ProductSans-Light.ttf);
+}
+
+@font-face {
+    font-family: product-sans-regular;
+    src: url(../../fonts/product-sans/ProductSans-Regular.ttf);
+}
+
+@font-face {
+    font-family: product-sans-thin;
+    src: url(../../fonts/product-sans/ProductSans-Thin.ttf);
+}
