@@ -8,10 +8,7 @@ export class MailList extends React.Component {
     }
 
     updateSelectedMails = (mailId) => {
-        // this.setState((prevState) => ({
-        //     selectedMails: [...prevState.selectedMails, `${mailId}`]
-        // }))
-        this.setState({ selectedMails: [mailId] })
+        this.setState(prevState => ({ selectedMails: [...prevState.selectedMails, mailId] }))
     }
 
     render() {
