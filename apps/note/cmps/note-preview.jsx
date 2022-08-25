@@ -4,7 +4,6 @@ const { Link } = ReactRouterDOM
 
 
 export class NotePreview extends React.Component {
-    //  ({ note, onRemoveNote }) {
 
     state = {
         noteType: null
@@ -27,10 +26,9 @@ export class NotePreview extends React.Component {
     }
 
     render() {
-        // const { currView } = this.state
-        console.log('noteType:', this.state.noteType)
         const { DynamicCmp } = this
-        const {note} = this.props
+        const {note, onRemoveNote} = this.props
+    
 
         return <article contentEditable={true} className="flex note-preview">
             
