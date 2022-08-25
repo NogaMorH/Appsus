@@ -1,12 +1,15 @@
 import { TextNote } from "./text-note.jsx"
 import { ImageNote } from "./image-note.jsx"
-const { Link } = ReactRouterDOM
-
+import { VideoNote } from "./video-note.jsx"
+import { NoteEdit } from "./edit-note.jsx"
+import {eventBusService} from "../../../services/event-bus.service.js"
+const { Link, Route } = ReactRouterDOM
 
 export class NotePreview extends React.Component {
 
     state = {
-        noteType: null
+        noteType: null,
+        isSelected: false
     }
 
     componentDidMount(){
@@ -20,26 +23,28 @@ export class NotePreview extends React.Component {
                 return <TextNote {...props} />
             case 'image':
                 return <ImageNote {...props} />
-            // case 'video':
-            //     return <VideoNote {...props} />
+            case 'video':
+                return <VideoNote {...props} />
         }
     }
 
+    
+
     render() {
         const { DynamicCmp } = this
-        const {note, onRemoveNote} = this.props
+        const {note, onRemoveNote, onAddNote, onSelectNote} = this.props
     
 
         return <article className="flex note-preview">
-            
+           
             <Link to={"/note/" + note.id}>
             <DynamicCmp note={note}/>
             </Link>
-            
+
+            <Route path={"/note/" + note.id} component={NoteEdit} />
             <div>
                 <button className="btn" onClick={() => onRemoveNote(note.id)}>X</button>
             </div>
-
         </article>
     }
 }
@@ -60,3 +65,5 @@ export class NotePreview extends React.Component {
 //         </div>
 
 //     </article>
+
+// onAddNote={onAddNote}

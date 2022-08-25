@@ -6,7 +6,8 @@ export const NoteService = {
     remove,
     createNote,
     addNote,
-    getNoteById
+    getNoteById,
+    save
 }
 
 const STORAGE_KEY = 'notesDB'
@@ -46,8 +47,34 @@ const gNotes = [
         },
         style: {
             backgroundColor: 'white'
+        },
+    },
+    {
+
+        id: utilService.makeId(),
+        type: 'video',
+        info: {
+            url: "https://www.youtube.com/embed/DT-dxG4WWf4",
+            title: 'Fleet Foxes - Mykonos'
+        },
+        style: {
+            backgroundColor: 'white'
+        }
+    },
+    {
+
+        id: utilService.makeId(),
+        type: 'video',
+        info: {
+            url: "https://www.youtube.com/embed/TWcyIpul8OE",
+            title: 'Fleet Foxes - Mykonos'
+        },
+        style: {
+            backgroundColor: 'white'
         }
     }
+
+
 ]
 
 function query() {
@@ -69,12 +96,52 @@ function remove(noteId) {
     return Promise.resolve()
 }
 
+function save(note) {
+    if (note.id) return updateNote(note)
+    else return addNote(note)
+}
+
+function updateNote(noteToUpdate) {
+    console.log('noteToUpdate:', noteToUpdate)
+    let notes = _loadNotesFromStorage()
+    notes = notes.map(note => note.id === noteToUpdate.id ? noteToUpdate : note)
+    _saveNotesToStorage(notes)
+    return Promise.resolve(noteToUpdate)
+}
+
 function addNote({ title, text, type, url }) {
     let notes = _loadNotesFromStorage()
     const note = createNote(title, text, type, url)
     notes.unshift(note)
     _saveNotesToStorage(notes)
     return Promise.resolve(note)
+}
+
+function copyNote(note){
+    console.log('note from servive copynote:', note)
+    const notes = _loadNotesFromStorage()
+    const noteCopy = createNoteCopy(note)
+    notes.unshift(noteCopy)
+    _saveNotesToStorage(notes)
+    return Promise.resolve(notes)
+}
+
+function createNoteCopy(note){
+    const noteCopy = {
+        id: makeId(),
+        type: note.type,
+        info: {
+            title: note.info.title,
+            // text: note.info.text,
+            // url: note.info.url
+        },
+        isPined: false
+    }
+    if (newNote.type === 'img' || newNote.type === 'video') {
+        newNote.info.url = url
+
+    } else newNote.info.text = text
+    return newNote
 }
 
 function createNote(title, text, type, url) {
@@ -101,7 +168,6 @@ function getNoteById(noteId) {
     const note = notes.find(note => noteId === note.id)
     return Promise.resolve(note)
 }
-
 
 
 function _saveNotesToStorage(notes) {
