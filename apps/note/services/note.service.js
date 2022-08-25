@@ -71,6 +71,7 @@ function addNote({ title, text, type, url }) {
 }
 
 function createNote(title, text, type, url) {
+    console.log('type from service!!!!!:', type)
     let newNote = {
         id: utilService.makeId(),
         type,

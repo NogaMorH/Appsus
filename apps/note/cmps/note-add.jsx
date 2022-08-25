@@ -4,7 +4,7 @@ export class NoteAdd extends React.Component {
         note: {
             text: '',
             title: '',
-            type: '',
+            type: 'text',
             isPinned: false
         }
     }
