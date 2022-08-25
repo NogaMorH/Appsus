@@ -32,25 +32,28 @@ export class NoteAdd extends React.Component {
         const { text, title, type, isPinned } = this.state.note
         const { handleChange, onSubmit } = this
         return <section className="add-note-container">
-            <form onSubmit={onSubmit}>
-                <input type="text"
-                    name="title"
-                    value={title}
-                    placeholder="Title"
-                    onChange={handleChange} />
+            <form onSubmit={onSubmit} className="add-note-form">
+                
+                    <input type="text"
+                        name="title"
+                        value={title}
+                        placeholder="Title:"
+                        onChange={handleChange} />
 
-                <input type="text"
-                    name="text"
-                    value={text}
-                    placeholder="Take a note"
-                    onChange={handleChange} />
-
-                <button className="btn">Save</button>
+                    <textarea
+                        name="text"
+                        id="text"
+                        placeholder="Take a note..."
+                        value={text}
+                        cols="35"
+                        rows="5"
+                        onChange={handleChange}>
+                    </textarea>
+                    <button className="btn btn-save">Save</button>
+            
             </form>
             <section className="btn-container">
-                <button className="btn" >Add img</button>
-                <button className="btn">Add video</button>
-                <button className="btn">bg color</button>
+        
             </section>
             <div className="btn btn-pin">
                 <button>pin</button>

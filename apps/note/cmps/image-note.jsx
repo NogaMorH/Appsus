@@ -3,8 +3,8 @@ export class ImageNote extends React.Component {
         console.log('props: from image note', this.props)
         const { title, url } = this.props.note.info
 
-        return <article contentEditable={true} className="flex note-preview">
-            <h3>{title}</h3>
+        return <article className="flex note-preview">
+            <h3 contentEditable={true} suppressContentEditableWarning={true}>{title}</h3>
             <img src={url}/>
         </article>
 

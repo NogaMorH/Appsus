@@ -18,6 +18,9 @@ const gNotes = [
         info: {
             title: 'FullStack',
             text: 'Fullstack Me Baby!'
+        },
+        style: {
+            backgroundColor: 'white'
         }
     },
     {
@@ -28,7 +31,7 @@ const gNotes = [
             title: 'Bobi and Me'
         },
         style: {
-            backgroundColor: '#00d'
+            backgroundColor: 'white'
         }
     },
     {
@@ -39,6 +42,9 @@ const gNotes = [
                 { text: 'Driving liscence', doneAt: null },
                 { text: 'Coding power', doneAt: 187111111 }
             ]
+        },
+        style: {
+            backgroundColor: 'white'
         }
     }
 ]

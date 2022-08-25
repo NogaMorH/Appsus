@@ -1,0 +1,26 @@
+.add-note-container {
+    max-width: 20vw;
+}
+
+.add-note-form input {
+    width: 100%;
+}
+
+.add-note-form textarea {
+    width: 100%;
+    resize: none;
+
+}
+
+.add-note-form .btn-save {
+    position: relative;
+    display: flex;
+    align-self: end;
+}
+/* 
+.add-note-container .btn-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+} */
+

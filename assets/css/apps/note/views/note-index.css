@@ -1,3 +1,8 @@
-.note-index {
-    background-color: antiquewhite;
+
+.note-index .main-content {
+    flex-direction: column;
 }
+/* 
+.main-content .input-container {
+
+} */

@@ -30,7 +30,7 @@ export class NotePreview extends React.Component {
         const {note, onRemoveNote} = this.props
     
 
-        return <article contentEditable={true} className="flex note-preview">
+        return <article className="flex note-preview">
             
             <Link to={"/note/" + note.id}>
             <DynamicCmp note={note}/>
