@@ -2,7 +2,7 @@ const { Link } = ReactRouterDOM
 
 
 export function NotePreview({ note, onRemoveNote }) {
-    console.log('note:', note)
+    // console.log('note:', note)
     const { text, url, title } = note.info
     return <article contentEditable={true} className="flex note-preview">
         <Link to={"/note/" + note.id}>

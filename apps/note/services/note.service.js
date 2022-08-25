@@ -62,16 +62,15 @@ function remove(noteId) {
     return Promise.resolve()
 }
 
-// function addNote({ title, text, type, url }){
-//     let notes = _loadNotesFromStorage()
-//     const note = createNote({ title, text, type, url })
-//     notes = [note, ...notes]
-//     _saveNotesToStorage(notes)
-//     return Promise.resolve(note)
-// }
-
-function createNote({ title, text, type, url }) {
+function addNote({ title, text, type, url }) {
     let notes = _loadNotesFromStorage()
+    const note = createNote(title, text, type, url)
+    notes.unshift(note)
+    _saveNotesToStorage(notes)
+    // return Promise.resolve(note)
+}
+
+function createNote(title, text, type, url) {
     let newNote = {
         id: utilService.makeId(),
         type,
@@ -81,12 +80,11 @@ function createNote({ title, text, type, url }) {
         isPinned: false
     }
     if (newNote.type === 'img' || newNote.type === 'video') {
-        newNote.info.url = url          
-       
+        newNote.info.url = url
+
     } else newNote.info.text = text
-    
-    notes.unshift(newNote)
-    _saveNotesToStorage(notes)
+    return newNote
+
 }
 
 

@@ -31,10 +31,10 @@ export class NoteIndex extends React.Component {
             })
     }
 
-    // onAddNote = (newNote) => {
-    //     NoteService.addNote(newNote)
-    //         .then(this.setState({notes: [newNote, ...this.state.notes]})
-    // )}
+    onAddNote = (newNote) => {
+        NoteService.addNote(newNote)
+            .then(this.setState({notes: [newNote, ...this.state.notes]})
+    )}
 
 
     render() {
