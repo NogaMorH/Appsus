@@ -5,7 +5,8 @@ export const NoteService = {
     query,
     remove,
     createNote,
-    addNote
+    addNote,
+    getNoteById
 }
 
 const STORAGE_KEY = 'notesDB'
@@ -92,6 +93,13 @@ function createNote(title, text, type, url) {
     } else newNote.info.text = text
     return newNote
 
+}
+
+function getNoteById(noteId) {
+    if (!noteId) return Promise.resolve(null)
+    const notes = _loadNotesFromStorage()
+    const note = notes.find(note => noteId === note.id)
+    return Promise.resolve(note)
 }
 
 
