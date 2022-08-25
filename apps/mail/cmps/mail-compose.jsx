@@ -1,3 +1,5 @@
+import { mailService } from '../services/mail.service.js'
+
 export class MailCompose extends React.Component {
 
     state = {
@@ -14,7 +16,7 @@ export class MailCompose extends React.Component {
 
     inputRef = React.createRef()
 
-    handleChange = (ev) => {
+    onHandleChange = (ev) => {
         const { target } = ev
         const field = target.name
         const value = target.value
@@ -23,22 +25,23 @@ export class MailCompose extends React.Component {
         }))
     }
 
-    addMail(ev) {
+    onAddMail = (ev) => {
         ev.preventDefault()
-        console.log('add mail')
+        mailService.addMail(this.state.mail)
+        this.props.closeCompose()
     }
 
     render() {
         return <section className="mail-compose">
-            <form onSubmit={this.addMail}>
-                <input onChange={this.handleChange}
+            <form onSubmit={this.onAddMail}>
+                <input onChange={this.onHandleChange}
                     type="text"
                     required
                     ref={this.inputRef}
                     name="to"
                     placeholder="To" />
 
-                <input onChange={this.handleChange}
+                <input onChange={this.onHandleChange}
                     type="text"
                     name="subject"
                     placeholder="Subject" />

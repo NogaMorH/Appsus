@@ -25,13 +25,19 @@ export class MailIndex extends React.Component {
         this.setState({ composeOpened: true })
     }
 
+    closeCompose = () => {
+        this.setState({ composeOpened: false }, () => {
+            this.loadMails()
+        })
+    }
+
     render() {
         const { mails, composeOpened } = this.state
         if (!mails) return <div></div>
         return <section className="flex mail-index">
             <MailSideNav composeMail={this.composeMail} />
             <MailList mails={mails} />
-            {composeOpened && <MailCompose />}
+            {composeOpened && <MailCompose closeCompose={this.closeCompose} />}
         </section>
     }
 }
