@@ -97,6 +97,7 @@ function remove(noteId) {
 }
 
 function save(note) {
+    console.log('note from save:', note)
     if (note.id) return updateNote(note)
     else return addNote(note)
 }
@@ -132,16 +133,14 @@ function createNoteCopy(note){
         type: note.type,
         info: {
             title: note.info.title,
-            // text: note.info.text,
-            // url: note.info.url
         },
         isPined: false
     }
-    if (newNote.type === 'img' || newNote.type === 'video') {
-        newNote.info.url = url
+    if (noteCopy.type === 'img' || noteCopy.type === 'video') {
+        noteCopy.info.url = url
 
-    } else newNote.info.text = text
-    return newNote
+    } else noteCopy.info.text = text
+    return noteCopy
 }
 
 function createNote(title, text, type, url) {

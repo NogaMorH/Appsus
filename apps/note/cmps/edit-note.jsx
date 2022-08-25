@@ -15,6 +15,7 @@ export class NoteEdit extends React.Component {
     }
 
     componentDidUpdate(prevProps, prevState) {
+        if (!this.props.match) return
         if (!prevProps.match.params.noteId !== this.props.match.params.noteId) {
             this.loadNote()
         }
@@ -46,7 +47,8 @@ export class NoteEdit extends React.Component {
     onSaveNote = (ev) => {
         ev.preventDefault()
         NoteService.save(this.state.note)
-            .then(() => {
+        .then(() => {
+                if (!this.props.match) return
                 this.props.history.push('/note')
             })
     }

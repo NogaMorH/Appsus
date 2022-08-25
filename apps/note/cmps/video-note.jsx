@@ -1,12 +1,4 @@
 
-// export function VideoNote({ note }) {
-//     console.log('note: from video noe', note)
-//     const { title, url } = note.props.info
-//     return <section className="video-note-container">
-
-//     </section>
-// }
-
 export class VideoNote extends React.Component {
     render() {
         console.log('props: from video note', this.props)
