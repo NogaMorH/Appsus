@@ -1,10 +1,11 @@
-export function MailPreview({ mail }) {
-    const { subject, from, body, sentAt } = mail
-    const { senderName } = from
+export class MailPreview extends React.Component {
 
-    setTimeForDisplay()
+    state = {
+        isSelected: false
+    }
 
-    function setTimeForDisplay() {
+    setTimeForDisplay = () => {
+        const { sentAt } = this.props.mail
         const date = new Date(sentAt)
         const year = date.getFullYear()
         const month = date.getMonth() + 1
@@ -12,11 +13,21 @@ export function MailPreview({ mail }) {
         return `${day}/${month}/${year}`
     }
 
-    return <li className="mail-preview">
-        <span>icons</span>
-        <span className="hide-long-text">{senderName}</span>
-        <span className="hide-long-text">{subject} - {body}</span>
-        <span className="hide-long-text">{setTimeForDisplay()}</span>
-    </li>
+    onToggleSelect = ({ target }) => {
+        const isChecked = target.checked
+        this.setState({ isSelected: isChecked })
+    }
+
+    render() {
+        const { subject, from, body, id } = this.props.mail
+        const { senderName } = from
+        return <li className="mail-preview">
+            <span><input type="checkbox" onClick={this.onToggleSelect} /></span>
+            <span className="hide-long-text">{senderName}</span>
+            <span className="hide-long-text">{subject} - {body}</span>
+            <span className="hide-long-text">{this.setTimeForDisplay()}</span>
+
+        </li>
+    }
 }
 
