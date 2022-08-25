@@ -5,7 +5,7 @@ export const NoteService = {
     query,
     remove,
     createNote,
-    // addNote
+    addNote
 }
 
 const STORAGE_KEY = 'notesDB'
@@ -67,7 +67,7 @@ function addNote({ title, text, type, url }) {
     const note = createNote(title, text, type, url)
     notes.unshift(note)
     _saveNotesToStorage(notes)
-    // return Promise.resolve(note)
+    return Promise.resolve(note)
 }
 
 function createNote(title, text, type, url) {

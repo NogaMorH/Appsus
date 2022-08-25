@@ -45,7 +45,7 @@ export class NoteIndex extends React.Component {
             <section className="flex notes-index">
                 <NoteSideNav />
                 <NoteList notes={notes} onRemoveNote={onRemoveNote} />
-                {/* <NoteAdd onAddNote={onAddNote} /> */}
+                <NoteAdd onAddNote={onAddNote} />
             </section>
 
         )

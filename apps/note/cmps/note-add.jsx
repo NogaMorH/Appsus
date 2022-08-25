@@ -9,22 +9,22 @@ export class NoteAdd extends React.Component {
         }
     }
 
-    handleChange = ({target}) => {
+    handleChange = ({ target }) => {
         const field = target.name
         const value = target.value
         this.setState((prevState) => ({
-            note:{
+            note: {
                 ...prevState.note,
-                [field]:value
+                [field]: value
             }
         }))
     }
 
-    // onSubmit = (ev) => {
-    //     ev.preventDefault()
-    //         this.props.onAddNote(this.state.note)
-        
-    // }
+    onSubmit = (ev) => {
+        ev.preventDefault()
+        this.props.onAddNote(this.state.note)
+
+    }
 
 
 
