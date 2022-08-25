@@ -9,7 +9,7 @@ export class NoteFilter extends React.Component {
 
 
     handleChange = ({target}) => {
-        console.log('target:', target)
+        // console.log('target:', target)
         const field = target.name
         const value = target.value
         this.setState((prevState) => ({
@@ -19,22 +19,30 @@ export class NoteFilter extends React.Component {
             }
         }))
     }
+
+    onFilter = (ev) => {
+        ev.preventDefault()
+        this.props.onSetFilter(this.state.filterBy)
+    }
+
     render() {
         const { title, type } = this.state.filterBy
-        const {handleChange} = this
+        const {handleChange, onFilter} = this
         return <section className="note-filter">
 
-            <form >
+            <form onSubmit={onFilter}>
 
                 <label htmlFor="title"></label>
-                <input type="text"
+                <input type="search"
                     name="title"
                     value={title}
                     id="title"
                     placeholder="Search"
                     onChange={handleChange}/>
 
-                    
+
+
+
             </form>
         </section>
     }

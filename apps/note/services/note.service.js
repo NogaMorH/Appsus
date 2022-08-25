@@ -22,7 +22,7 @@ const gNotes = [
     },
     {
         id: utilService.makeId(),
-        type: 'img',
+        type: 'image',
         info: {
             url: 'https://www.travelandleisure.com/thmb/EOI9YwqppLli0TG5LsWrYz4wUAk=/900x0/filters:no_upscale():max_bytes(150000):strip_icc():gifv():format(webp)/jellyfish-lake-reopening-JELLY119-6e2116ca23764b9aa0e56096db7973b4.jpg',
             title: 'Bobi and Me'
