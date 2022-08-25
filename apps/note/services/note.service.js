@@ -5,7 +5,7 @@ export const NoteService = {
     query,
     remove,
     createNote,
-    // addNote
+    addNote
 }
 
 const STORAGE_KEY = 'notesDB'
@@ -22,7 +22,7 @@ const gNotes = [
     },
     {
         id: utilService.makeId(),
-        type: 'img',
+        type: 'image',
         info: {
             url: 'https://www.travelandleisure.com/thmb/EOI9YwqppLli0TG5LsWrYz4wUAk=/900x0/filters:no_upscale():max_bytes(150000):strip_icc():gifv():format(webp)/jellyfish-lake-reopening-JELLY119-6e2116ca23764b9aa0e56096db7973b4.jpg',
             title: 'Bobi and Me'
@@ -62,16 +62,15 @@ function remove(noteId) {
     return Promise.resolve()
 }
 
-// function addNote({ title, text, type, url }){
-//     let notes = _loadNotesFromStorage()
-//     const note = createNote({ title, text, type, url })
-//     notes = [note, ...notes]
-//     _saveNotesToStorage(notes)
-//     return Promise.resolve(note)
-// }
-
-function createNote({ title, text, type, url }) {
+function addNote({ title, text, type, url }) {
     let notes = _loadNotesFromStorage()
+    const note = createNote(title, text, type, url)
+    notes.unshift(note)
+    _saveNotesToStorage(notes)
+    return Promise.resolve(note)
+}
+
+function createNote(title, text, type, url) {
     let newNote = {
         id: utilService.makeId(),
         type,
@@ -81,12 +80,11 @@ function createNote({ title, text, type, url }) {
         isPinned: false
     }
     if (newNote.type === 'img' || newNote.type === 'video') {
-        newNote.info.url = url          
-       
+        newNote.info.url = url
+
     } else newNote.info.text = text
-    
-    notes.unshift(newNote)
-    _saveNotesToStorage(notes)
+    return newNote
+
 }
 
 
