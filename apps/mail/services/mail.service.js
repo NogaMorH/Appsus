@@ -2,7 +2,8 @@ import { utilService } from '../../../services/util.service.js'
 import { storageService } from '../../../services/storage.service.js'
 
 export const mailService = {
-    query
+    query,
+    addMail
 }
 
 const STORAGE_KEY = 'mailsDb'
@@ -169,6 +170,26 @@ function query() {
     return Promise.resolve(mails)
 }
 
+function addMail(mailData) {
+    const loggedInUser = _getLoggedInUser()
+    const { to, subject, body } = mailData
+    let mails = _loadMailsFromStorage()
+    const newMail = {
+        id: utilService.makeId(),
+        subject,
+        body,
+        isRead: true,
+        sentAt: Date.now(),
+        to,
+        from: {
+            senderName: loggedInUser.fullName,
+            senderAddress: loggedInUser.mailAddress
+        }
+    }
+    mails.unshift(newMail)
+    _SaveMailsToStorage(mails)
+}
+
 function _loadMailsFromStorage() {
     const { loadFromStorage } = storageService
     return loadFromStorage(STORAGE_KEY)
@@ -177,4 +198,12 @@ function _loadMailsFromStorage() {
 function _SaveMailsToStorage(mails) {
     const { saveToStorage } = storageService
     saveToStorage(STORAGE_KEY, mails)
+}
+
+function _getLoggedInUser() {
+    const loggedInUser = {
+        fullName: 'Mahatma Appsus',
+        mailAddress: 'user@appsus.com'
+    }
+    return loggedInUser
 }
