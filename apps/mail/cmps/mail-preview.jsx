@@ -1,3 +1,5 @@
+const { Link } = ReactRouterDOM
+
 export class MailPreview extends React.Component {
 
     state = {
@@ -27,10 +29,15 @@ export class MailPreview extends React.Component {
         const { senderName } = from
         return <li className="mail-preview">
             <span><input type="checkbox" onClick={this.onToggleSelect} /></span>
-            <span className="hide-long-text">{senderName}</span>
-            <span className="hide-long-text">{subject} - {body}</span>
-            <span className="hide-long-text">{this.setTimeForDisplay()}</span>
-
+            <Link to={"/mail/" + id} className="hide-long-text">
+                {senderName}
+            </Link>
+            <Link to={"/mail/" + id} className="hide-long-text">
+                {subject} - {body}
+            </Link>
+            <Link to={"/mail/" + id} className="hide-long-text">
+                {this.setTimeForDisplay()}
+            </Link>
         </li>
     }
 }
