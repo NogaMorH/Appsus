@@ -1,3 +1,31 @@
+.mail-compose {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 700px;
+    grid-template-rows: 30px 1fr;
+}
+
+.mail-compose .mail-compose-header {
+    background-color: gray;
+}
+
+.mail-compose .close-btn {
+    float: right;
+}
+
+.mail-compose-form {
+    display: grid;
+    grid-template-rows: 35px 35px 1fr 50px;
+    width: 500px;
+}
+
+.mail-compose input {
+    display: block;
+    width: 100%;
+}
+
 .mail-compose textarea {
     resize: none;
+    width: 100%;
 }

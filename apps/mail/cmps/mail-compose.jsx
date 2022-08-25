@@ -32,8 +32,14 @@ export class MailCompose extends React.Component {
     }
 
     render() {
-        return <section className="mail-compose">
-            <form onSubmit={this.onAddMail}>
+        const { closeCompose } = this.props
+        return <section className="grid mail-compose">
+            <header className="mail-compose-header">
+                <button className="btn close-btn" onClick={closeCompose}>
+                    x
+                </button>
+            </header>
+            <form className="mail-compose-form" onSubmit={this.onAddMail}>
                 <input onChange={this.onHandleChange}
                     type="text"
                     required

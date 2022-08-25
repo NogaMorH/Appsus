@@ -32,6 +32,7 @@ export class MailIndex extends React.Component {
     }
 
     onRemoveMail = (selectedMails) => {
+        if (!selectedMails || !selectedMails.length) return
         selectedMails.forEach(id => mailService.removeMail(id))
         this.loadMails()
     }
