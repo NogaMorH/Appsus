@@ -26,7 +26,7 @@ export class NoteIndex extends React.Component {
         console.log('noteId:', noteId)
         NoteService.remove(noteId)
             .then(() => {
-                console.log('removed:')
+                // console.log('removed:')
                 const notes = this.state.notes.filter(note => note.id !== noteId)
                 this.setState({ notes }
                 )

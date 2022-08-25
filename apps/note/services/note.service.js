@@ -16,7 +16,7 @@ const gNotes = [
         type: 'text',
         isPinned: true,
         info: {
-            title: '',
+            title: 'FullStack',
             text: 'Fullstack Me Baby!'
         }
     },

@@ -45,14 +45,14 @@ export class NoteAdd extends React.Component {
                     placeholder="Take a note"
                     onChange={handleChange} />
 
-                <button>Save</button>
+                <button className="btn">Save</button>
             </form>
             <section className="btn-container">
-                <button>Add img</button>
-                <button>Add video</button>
-                <button>bg color</button>
+                <button className="btn" >Add img</button>
+                <button className="btn">Add video</button>
+                <button className="btn">bg color</button>
             </section>
-            <div className="btn-pin">
+            <div className="btn btn-pin">
                 <button>pin</button>
             </div>
         </section>

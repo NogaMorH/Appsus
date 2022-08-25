@@ -26,8 +26,6 @@ export class NotePreview extends React.Component {
     }
 
     render() {
-        // const { currView } = this.state
-        console.log('noteType:', this.state.noteType)
         const { DynamicCmp } = this
         const {note, onRemoveNote} = this.props
     

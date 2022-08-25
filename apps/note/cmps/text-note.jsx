@@ -1,6 +1,6 @@
 export class TextNote extends React.Component {
     render() {
-        console.log('props: from text noteeeeeeeee', this.props.note)
+        console.log('props: from text note', this.props.note)
         const { title, text } = this.props.note
 
         return <article contentEditable={true} className="flex note-preview">
