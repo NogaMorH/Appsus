@@ -3,7 +3,8 @@ import { storageService } from '../../../services/storage.service.js'
 
 export const mailService = {
     query,
-    addMail
+    addMail,
+    removeMail
 }
 
 const STORAGE_KEY = 'mailsDb'
@@ -187,6 +188,13 @@ function addMail(mailData) {
         }
     }
     mails.unshift(newMail)
+    _SaveMailsToStorage(mails)
+}
+
+function removeMail(mailId) {
+    let mails = _loadMailsFromStorage()
+    const mailIdx = mails.findIndex(mail => mail.id === mailId)
+    mails.splice(mailIdx, 1)
     _SaveMailsToStorage(mails)
 }
 

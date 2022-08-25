@@ -31,12 +31,17 @@ export class MailIndex extends React.Component {
         })
     }
 
+    onRemoveMail = (selectedMails) => {
+        selectedMails.forEach(id => mailService.removeMail(id))
+        this.loadMails()
+    }
+
     render() {
         const { mails, composeOpened } = this.state
         if (!mails) return <div></div>
         return <section className="flex mail-index">
             <MailSideNav composeMail={this.composeMail} />
-            <MailList mails={mails} />
+            <MailList mails={mails} onRemoveMail={this.onRemoveMail} />
             {composeOpened && <MailCompose closeCompose={this.closeCompose} />}
         </section>
     }

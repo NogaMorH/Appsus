@@ -14,8 +14,12 @@ export class MailPreview extends React.Component {
     }
 
     onToggleSelect = ({ target }) => {
+        const { updateSelectedMails, mail } = this.props
         const isChecked = target.checked
-        this.setState({ isSelected: isChecked })
+        this.setState({ isSelected: isChecked },
+            () => {
+                updateSelectedMails(mail.id)
+            })
     }
 
     render() {

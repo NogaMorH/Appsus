@@ -1,3 +1,4 @@
+import { mailService } from '../services/mail.service.js'
 import { MailPreview } from './mail-preview.jsx'
 
 export class MailList extends React.Component {
@@ -6,15 +7,19 @@ export class MailList extends React.Component {
         selectedMails: []
     }
 
-    updateSelectedMails() {
-        console.log('update selected mails')
+    updateSelectedMails = (mailId) => {
+        // this.setState((prevState) => ({
+        //     selectedMails: [...prevState.selectedMails, `${mailId}`]
+        // }))
+        this.setState({ selectedMails: [mailId] })
     }
 
     render() {
         const { mails } = this.props
         return <main className="main-layout mail-list-container">
+            <button onClick={() => this.props.onRemoveMail(this.state.selectedMails)}>Remove</button>
             <ul className="flex mail-list">
-                {mails.map(mail => <MailPreview key={mail.id} mail={mail} />)}
+                {mails.map(mail => <MailPreview key={mail.id} mail={mail} updateSelectedMails={this.updateSelectedMails} />)}
             </ul>
         </main >
     }
