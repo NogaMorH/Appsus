@@ -1,4 +1,5 @@
-.mail-inbox {
+.mail-index {
     background-color: antiquewhite;
     position: relative;
+    flex-grow: 1;
 }

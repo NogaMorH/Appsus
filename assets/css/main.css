@@ -18,6 +18,7 @@
 /* Apps */
 /* Mail views */
 @import './apps/mail/views/mail-index.css';
+@import './apps/mail/views/mail-details-page.css';
 
 /* Mail cmps */
 @import './apps/mail/cmps/mail-list.css';
