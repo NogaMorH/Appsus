@@ -34,6 +34,10 @@ export class MailPreview extends React.Component {
         return (this.state.isRead) ? 'read' : 'unread'
     }
 
+    getSelectedClass = () => {
+        return (this.state.isSelected) ? 'selected' : ''
+    }
+
     // onOpenMail = () => {
     //     const { id } = this.props.mail
     //     if (this.state.isRead) return
@@ -48,7 +52,8 @@ export class MailPreview extends React.Component {
         const { subject, from, body, id } = this.props.mail
         const { senderName } = from
         const readClass = this.getReadClass()
-        return <li className={`mail-preview ${readClass}`}>
+        const selectedClass = this.getSelectedClass()
+        return <li className={`mail-preview ${readClass} ${selectedClass}`}>
             <span><input type="checkbox" onClick={this.onToggleSelect} className="mail-checkbox" /></span>
             <Link to={"/mail/" + id} className="hide-long-text sender-name" onClick={this.onOpenMail}>
                 {senderName}
