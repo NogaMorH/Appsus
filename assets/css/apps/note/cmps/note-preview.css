@@ -7,7 +7,7 @@
     margin-bottom: 20px;
     display: flex;
     flex-direction: column;
-   
+
 }
 
 .note-preview .note-image {
@@ -29,10 +29,11 @@
     margin-inline-start: 12px;
 }
 
-.note-text  {
+.note-text {
     font-size: 1rem;
-    width:inherit;
+    width: inherit;
    
+
     /* border: none; */
 }
 
@@ -46,8 +47,12 @@
     margin: 10px auto;
 }
 
-.note-text, .note-image, .note.video {
+.note-text,
+.note-image,
+.note-video {
     border-bottom: none;
     display: flex;
     flex-direction: column;
+
+
 }

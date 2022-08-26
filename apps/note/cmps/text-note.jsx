@@ -3,7 +3,7 @@ export class TextNote extends React.Component {
     state = {
         text: this.props.note.info.text,
         title: this.props.note.info.title,
-        editMode: false
+        // editMode: false
     }
 
 
@@ -29,11 +29,12 @@ export class TextNote extends React.Component {
         const { onUpdateNewNote} = this
 
         return (<article className="flex note-text">
-            <div className="note-title">
-                <h3 contentEditable={true} onClick={this.onToggleEditMode} suppressContentEditableWarning={true} className="note-title">{title}</h3>
-            </div>
+            {/* <div className="note-title">
+                <h3 contentEditable={true} suppressContentEditableWarning={true} className="note-title">{title}</h3>
+            </div> */}
             <div className="note-text">
-                <p contentEditable={true} suppressContentEditableWarning={true} onClick={this.onToggleEditMode} onBlur={onUpdateNewNote}
+                <p contentEditable={true} suppressContentEditableWarning={true} 
+                onBlur={onUpdateNewNote}
                  className="note-text">{text}</p>
             </div>
         </article>)

@@ -1,5 +1,7 @@
 .note-index .main-content {
     flex-direction: column;
+    padding-right: 10px;
+    padding-left: 10px;
 }
 
 .main-content .input-container {
