@@ -7,8 +7,8 @@ export class _AppHeader extends React.Component {
         menuOpened: false
     }
 
-    onOpenMenu = () => {
-        this.setState({ menuOpened: true })
+    onToggleMenu = () => {
+        this.setState(prevState => ({ menuOpened: !prevState.menuOpened }))
     }
 
     render() {
@@ -19,7 +19,7 @@ export class _AppHeader extends React.Component {
                     <h3 className="logo-text">Appsus</h3>
                 </Link>
                 <img src="../assets/img/grid.png" alt="open menu" className="btn menu-btn"
-                    onClick={this.onOpenMenu} />
+                    onClick={this.onToggleMenu} />
                 {(this.state.menuOpened) && <AppNavModal />}
             </div>
         </header >

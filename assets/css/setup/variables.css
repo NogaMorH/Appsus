@@ -44,5 +44,9 @@
 
     /* grey box shadow inside note color: */
 
-    --var11: #e1e1e1
+    --var11: #e1e1e1;
+
+    /* mail nav bar */
+
+    --clr12: #dfebf9;
 }
