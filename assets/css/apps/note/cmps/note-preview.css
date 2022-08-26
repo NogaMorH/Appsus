@@ -2,19 +2,19 @@
     border-radius: 8px;
     position: relative;
     break-inside: avoid-column;
-    border: .8px solid #1d1d1d;
+    border: 3px solid var(--clr11);
     margin-bottom: 20px;
     display: flex;
     flex-direction: column;
-    padding: 12px;
+    padding: 15px 20px;
     font-family: product-sans-regular, sans-serif;
 
 }
 
 .note-preview .note-image {
     object-fit: cover;
-    width: 90%;
-    margin: 10px auto;
+    width: 100%;
+    border-radius: 10px;
 }
 
 .note-preview :hover {
@@ -27,7 +27,7 @@
     font-weight: bold;
     font-size: 1.3rem;
     margin-top: 3px;
-    margin-inline-start: 12px;
+    margin-bottom: 15px;
     font-family: product-sans-bold, sans-serif;
 }
 
@@ -46,7 +46,9 @@
 }
 
 .note-preview iframe {
-    margin: 10px auto;
+    width: 100%;
+    justify-content: flex-start;
+    border-radius: 10px;
 }
 
 .note-text,
@@ -55,10 +57,14 @@
     border-bottom: none;
     display: flex;
     flex-direction: column;
+ 
 
 
 }
 
 .note-preview .control-btn-remove{
     width: 35px;
+    border: none;
+    padding-top: 8px;
+    background-color: transparent;
 }
