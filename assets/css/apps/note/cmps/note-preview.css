@@ -19,7 +19,7 @@
 .note-preview :hover {
     border: 1px solid transparent;
     transition-timing-function: ease-in;
-    box-shadow: inset 1px 1px 0 rgb(0 0 0 / 10%), inset 0 -1px 0 rgb(0 0 0 / 7%);
+    /* box-shadow: inset 1px 1px 0 rgb(0 0 0 / 10%), inset 0 -1px 0 rgb(0 0 0 / 7%); */
 }
 
 .note-title {
@@ -29,11 +29,25 @@
     margin-inline-start: 12px;
 }
 
-.note-text {
+.note-text  {
     font-size: 1rem;
+    width:inherit;
+   
     /* border: none; */
+}
+
+.note-text textarea {
+    resize: none;
+    margin-inline-start: 8px;
+
 }
 
 .note-preview iframe {
     margin: 10px auto;
+}
+
+.note-text, .note-image, .note.video {
+    border-bottom: none;
+    display: flex;
+    flex-direction: column;
 }

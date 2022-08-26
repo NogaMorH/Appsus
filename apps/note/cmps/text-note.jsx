@@ -1,16 +1,36 @@
 export class TextNote extends React.Component {
+
+
+    onUpdateNewNote = (ev) => {
+        console.log('ev.target.innerText:', ev.target.innerText)
+        const newNote = {
+            ...this.props.note,
+            info: {
+                ...this.props.note.info,
+                text: ev.target.innerText,
+                title: this.state.title
+            }
+        }
+
+        console.log("updateNode", newNote)
+        this.props.onUpdateNote(newNote)
+        this.onToggleEditMode()
+    }
+
     render() {
-        // console.log('props: from text note', this.props.note)
-        const { title, text } = this.props.note.info
-        // console.log('title, text:', title, text)
-        return <article  className="flex note-preview">
+        const { text, title } = this.props.note.info
+        const { onUpdateNewNote} = this
+
+        return (<article className="flex note-text">
             <div className="note-title">
-            <h3 contentEditable={true} suppressContentEditableWarning={true} className="note-title">{title}</h3>
+                <h3 contentEditable={true} onClick={this.onToggleEditMode} suppressContentEditableWarning={true} className="note-title">{title}</h3>
             </div>
             <div className="note-text">
-            <p contentEditable={true} suppressContentEditableWarning={true} className="note-text">{text}</p>
+                <p contentEditable={true} suppressContentEditableWarning={true} onClick={this.onToggleEditMode} onBlur={onUpdateNewNote}
+                 className="note-text">{text}</p>
             </div>
-        </article>
+        
+        </article>)
     }
 
 }

@@ -40,8 +40,6 @@ export class NotePreview extends React.Component {
 
     render() {
         const { note, onRemoveNote, onAddNote, setSelectedNote, onUpdateNote } = this.props
-        // console.log('note:from note preview', note)
-        // console.log('this.props:', this.props)
         const { DynamicCmp } = this
 
         return <article onClick={this.onSelectedNote} className="flex note-preview">
