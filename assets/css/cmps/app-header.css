@@ -2,6 +2,7 @@
     background: var(--clr7);
     border-bottom: 2px solid white;
     box-shadow: -1px 1px 7px 0 #6f6f6f59;
+    z-index: 1;
 }
 
 .app-header {

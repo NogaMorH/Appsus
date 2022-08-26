@@ -45,7 +45,7 @@ export class NotePreview extends React.Component {
         return <article onClick={this.onSelectedNote} className="flex note-preview">
             <DynamicCmp note={note} onUpdateNote={onUpdateNote} />
             <div>
-                <button className="btn" onClick={() => onRemoveNote(note.id)}>X</button>
+                <button className="btn control-btn-remove" onClick={() => onRemoveNote(note.id)}><img src="../../../assets/img/trash.png" alt="delete email" /></button>
             </div>
         </article>
     }

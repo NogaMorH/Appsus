@@ -3,4 +3,5 @@
     min-width: 250px;
     padding-right: 0;
     flex-grow: 1;
+    background-color: var(--clr10);
 }
