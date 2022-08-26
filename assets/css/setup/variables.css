@@ -1,6 +1,6 @@
 :root {
 
-    /* mail list bg color: */
+    /* mail filter: */
 
     --clr1: #f2f6fb;
 
@@ -28,25 +28,29 @@
 
     /* bg color: */
 
-    --var7: #ffffff;
+    --clr7: #ffffff;
 
     /* selected page color: */
 
-    --var8: #fdefc3;
+    --clr8: #fdefc3;
 
     /* text color: */
 
-    --var9: #4c4c4c;
+    --clr9: #4c4c4c;
 
     /* search input color & hover on nav-bar: */
 
-    --var10: #f0f3f4;
+    --clr10: #f0f3f4;
 
     /* grey box shadow inside note color: */
 
-    --var11: #e1e1e1;
+    --clr11: #e1e1e1;
 
     /* mail nav bar */
 
     --clr12: #dfebf9;
+
+    /* read mail preview bg color */
+
+    --clr13: #f1f1f1;
 }

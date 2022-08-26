@@ -20,7 +20,7 @@ export class _AppHeader extends React.Component {
                 </Link>
                 <img src="../assets/img/grid.png" alt="open menu" className="btn menu-btn"
                     onClick={this.onToggleMenu} />
-                {(this.state.menuOpened) && <AppNavModal />}
+                {(this.state.menuOpened) && <AppNavModal onToggleMenu={this.onToggleMenu} />}
             </div>
         </header >
     }

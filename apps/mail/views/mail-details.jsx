@@ -8,6 +8,7 @@ export class MailDetails extends React.Component {
     }
 
     componentDidMount() {
+        console.log('this:', this)
         this.loadMail()
     }
 
@@ -27,7 +28,7 @@ export class MailDetails extends React.Component {
             })
     }
 
-    onGoBack() {
+    onGoBack = () => {
         this.props.history.push('/mail')
     }
 
@@ -37,6 +38,7 @@ export class MailDetails extends React.Component {
         return <section className="flex mail-details-page">
             <MailSideNav />
             <main className="mail-details">
+                <button onClick={this.onGoBack} className="btn">Go back</button>
                 <h3>{subject}</h3>
                 <p>{body}</p>
             </main>

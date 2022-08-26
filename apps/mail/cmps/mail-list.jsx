@@ -15,7 +15,7 @@ export class MailList extends React.Component {
         console.log('this.props:', this.props)
         const { mails } = this.props
         return <main className="main-layout mail-list-container">
-            <button onClick={() => this.props.onRemoveMail(this.state.selectedMails)}>Remove</button>
+            <button className="btn" onClick={() => this.props.onRemoveMail(this.state.selectedMails)}>Remove</button>
             <ul className="flex mail-list">
                 {mails.map(mail => <MailPreview key={mail.id} mail={mail}
                     updateSelectedMails={this.updateSelectedMails} />)}

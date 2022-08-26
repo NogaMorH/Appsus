@@ -1,6 +1,6 @@
 const { Link } = ReactRouterDOM
 
-export function AppNavModal() {
+export function AppNavModal({ onToggleMenu }) {
     return <nav className="flex space-between app-nav-modal">
         <Link exact="true" to="/" className="app-nav-link">
             <img src="../assets/img/home.png" className="app-nav-icon" />

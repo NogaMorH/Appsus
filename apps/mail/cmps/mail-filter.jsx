@@ -29,6 +29,7 @@ export class MailFilter extends React.Component {
             name="text"
             value={text}
             placeholder="search"
+            className="mail-filter"
             onChange={this.onHandleChange} />
     }
 }

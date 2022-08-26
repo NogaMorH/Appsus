@@ -11,4 +11,9 @@
     border: none;
     margin-top: 20px;
     box-shadow: 0 1px 2px 0 rgb(60 64 67 / 30%), 0 1px 3px 1px rgb(60 64 67 / 15%);
+    transition: box-shadow .3s;
+}
+
+.mail-side-nav .compose-btn:hover {
+    box-shadow: 3px 2px 7px 0 rgb(60 64 67 / 30%), 2px 2px 3px 1px rgb(60 64 67 / 16%);
 }

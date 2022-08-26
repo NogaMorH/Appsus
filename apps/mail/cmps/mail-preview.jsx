@@ -49,14 +49,14 @@ export class MailPreview extends React.Component {
         const { senderName } = from
         const readClass = this.getReadClass()
         return <li className={`mail-preview ${readClass}`}>
-            <span><input type="checkbox" onClick={this.onToggleSelect} /></span>
+            <span><input type="checkbox" onClick={this.onToggleSelect} className="mail-checkbox" /></span>
             <Link to={"/mail/" + id} className="hide-long-text sender-name" onClick={this.onOpenMail}>
                 {senderName}
             </Link>
             <Link to={"/mail/" + id} className="hide-long-text" onClick={this.onOpenMail}>
                 <span className="subject">{subject}</span> - {body}
             </Link>
-            <Link to={"/mail/" + id} className="hide-long-text" onClick={this.onOpenMail}>
+            <Link to={"/mail/" + id} className="hide-long-text time" onClick={this.onOpenMail}>
                 {this.setTimeForDisplay()}
             </Link>
         </li>
