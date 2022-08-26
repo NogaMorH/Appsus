@@ -18,6 +18,10 @@
     margin-left: 50px;
 }
 
+.mail-details .mail-control-btn {
+    padding: 10px 10px 5px 10px;
+}
+
 .mail-details .mail-control-btn:hover {
     background-color: var(--clr7);
 }
