@@ -4,28 +4,53 @@
     right: 0;
     height: 700px;
     grid-template-rows: 30px 1fr;
+    box-shadow: -2px 0px 7px 0 #0f0f0f52;
 }
 
 .mail-compose .mail-compose-header {
-    background-color: gray;
+    background-color: var(--clr13);
 }
 
 .mail-compose .close-btn {
     float: right;
+    border: none;
+}
+
+.mail-compose .close-btn img {
+    width: 15px;
 }
 
 .mail-compose-form {
     display: grid;
     grid-template-rows: 35px 35px 1fr 50px;
     width: 500px;
+    padding: 0 16px;
+    background-color: var(--clr7);
+    color: var(--clr6);
 }
 
 .mail-compose input {
     display: block;
     width: 100%;
+    border-radius: 0;
+    border: none;
+    border-bottom: 1px solid var(--clr13);
+    padding: 8px 0;
+    color: inherit;
+}
+
+.mail-compose input:focus-visible {
+    outline: none;
 }
 
 .mail-compose textarea {
+    color: inherit;
     resize: none;
     width: 100%;
+    border: none;
+}
+
+.mail-compose textarea:focus-visible {
+    outline: none;
+    height: 100%;
 }

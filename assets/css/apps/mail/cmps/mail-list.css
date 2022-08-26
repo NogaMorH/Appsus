@@ -2,6 +2,19 @@
     padding-left: 0;
 }
 
+.mail-list-container .mail-control-btn {
+    margin-left: 7px;
+    margin-bottom: 10px;
+}
+
+.mail-list-container .mail-control-btn:hover {
+    background-color: var(--clr13);
+}
+
+.mail-list-container .mail-control-btn img {
+    width: 25px;
+}
+
 .mail-list {
     flex-direction: column;
 }

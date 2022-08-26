@@ -34,13 +34,24 @@ export class MailDetails extends React.Component {
 
     render() {
         if (!this.state.mail) return <div></div>
-        const { subject, body } = this.state.mail
+        const { subject, body, from } = this.state.mail
+        const { senderName, senderAddress } = from
         return <section className="flex mail-details-page">
             <MailSideNav />
-            <main className="mail-details">
-                <button onClick={this.onGoBack} className="btn">Go back</button>
-                <h3>{subject}</h3>
-                <p>{body}</p>
+            <main className="flex mail-details">
+                <div className="mail-details-btns">
+                    <button onClick={this.onGoBack} className="btn mail-control-btn">
+                        <img src="../../../assets/img/arrow.png" alt="Go back" />
+                    </button>
+                </div>
+                <div className="mail-content">
+                    <h3 className="title">{subject}</h3>
+                    <div className="sender">
+                        <span className="sender-name">{senderName}</span>
+                        <span className="sender-address">{senderAddress}</span>
+                    </div>
+                    <p>{body}</p>
+                </div>
             </main>
         </section>
     }
