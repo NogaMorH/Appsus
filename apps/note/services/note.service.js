@@ -1,7 +1,7 @@
 import { storageService } from '../../../services/storage.service.js'
 import { utilService } from '../../../services/util.service.js'
 
-export const NoteService = {
+export const noteService = {
     query,
     remove,
     createNote,
@@ -36,19 +36,19 @@ const gNotes = [
             backgroundColor: 'white'
         }
     },
-    {
-        id: utilService.makeId(),
-        type: 'todos',
-        info: {
-            label: 'Get my stuff together', todos: [
-                { text: 'Driving liscence', doneAt: null },
-                { text: 'Coding power', doneAt: 187111111 }
-            ]
-        },
-        style: {
-            backgroundColor: 'white'
-        },
-    },
+    // {
+    //     id: utilService.makeId(),
+    //     type: 'todos',
+    //     info: {
+    //         label: 'Get my stuff together', todos: [
+    //             { text: 'Driving liscence', doneAt: null },
+    //             { text: 'Coding power', doneAt: 187111111 }
+    //         ]
+    //     },
+    //     style: {
+    //         backgroundColor: 'white'
+    //     },
+    // },
     {
 
         id: utilService.makeId(),
@@ -79,7 +79,7 @@ const gNotes = [
         isPinned: true,
         info: {
             title: 'Quotes',
-            text:"Happiness is only real, when shared. ― Christopher McCandless"
+            text: "Happiness is only real, when shared. ― Christopher McCandless"
         },
         style: {
             backgroundColor: 'white'
@@ -124,21 +124,36 @@ const gNotes = [
         id: utilService.makeId(),
         type: 'video',
         info: {
-            url: "https://www.youtube.com/embed/TWcyIpul8OE",
+            url: "https://www.youtube.com/embed/v=wO0A0XcWy88",
             title: 'Fleet Foxes - Mykonos'
         },
         style: {
             backgroundColor: 'white'
         }
     }
-    
+
 ]
 
-function query() {
+function query(filterBy) {
+    console.log('filterBy:from query service', filterBy)
     let notes = _loadNotesFromStorage()
     if (!notes) {
         notes = gNotes
         _saveNotesToStorage(notes)
+    }
+
+    if (filterBy) {
+        let { text, type } = filterBy
+        // console.log('title:', title)
+        notes = notes.filter(note => {
+            // console.log('note.info.title:', note.info.title)
+            if (note.info.title) {
+                return note.info.title.toUpperCase().includes(text.toUpperCase())
+            }
+            if (note.info.text) {
+                return note.info.text.toUpperCase().includes(text.toUpperCase())
+            }
+        })
     }
 
     return Promise.resolve(notes)
@@ -173,10 +188,10 @@ function addNote({ title, text, type, url }) {
     console.log('note:', note)
     notes.unshift(note)
     _saveNotesToStorage(notes)
-    return Promise.resolve({...note})
+    return Promise.resolve({ ...note })
 }
 
-function copyNote(note){
+function copyNote(note) {
     console.log('note from servive copynote:', note)
     const notes = _loadNotesFromStorage()
     const noteCopy = createNoteCopy(note)
@@ -185,7 +200,7 @@ function copyNote(note){
     return Promise.resolve(notes)
 }
 
-function createNoteCopy(note){
+function createNoteCopy(note) {
     const noteCopy = {
         id: makeId(),
         type: note.type,

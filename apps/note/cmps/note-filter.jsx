@@ -2,13 +2,13 @@ export class NoteFilter extends React.Component {
 
     state = {
         filterBy: {
-            title: '',
-            type: ''
+            text: '',
+            // type: ''
         }
     }
 
 
-    handleChange = ({target}) => {
+    handleChange = ({ target }) => {
         // console.log('target:', target)
         const field = target.name
         const value = target.value
@@ -17,7 +17,9 @@ export class NoteFilter extends React.Component {
                 ...prevState.filterBy,
                 [field]: value
             }
-        }))
+        }), () => {
+            this.props.onSetFilter(this.state.filterBy)
+        })
     }
 
     onFilter = (ev) => {
@@ -26,19 +28,19 @@ export class NoteFilter extends React.Component {
     }
 
     render() {
-        const { title, type } = this.state.filterBy
-        const {handleChange, onFilter} = this
+        const { text, type } = this.state.filterBy
+        const { handleChange, onFilter } = this
         return <section className="note-filter">
 
             <form onSubmit={onFilter}>
 
-                <label htmlFor="title"></label>
+                <label htmlFor="text"></label>
                 <input type="search"
-                    name="title"
-                    value={title}
-                    id="title"
+                    name="text"
+                    value={text}
+                    id="text"
                     placeholder="Search"
-                    onChange={handleChange}/>
+                    onChange={handleChange} />
 
 
 

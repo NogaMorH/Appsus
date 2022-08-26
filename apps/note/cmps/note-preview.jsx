@@ -12,19 +12,11 @@ export class NotePreview extends React.Component {
         isSelected: false,
     }
 
-    // isRendered = false
 
     componentDidMount() {
-        console.log('hi')
-
         this.setState({ noteType: this.props.note.type })
-        // console.log('isRendered:', this.isRendered)
     }
-    // () => {this.toggleIsRendered}
 
-    //  toggleIsRendered = () => {
-    //     this.isRendered = true
-    // }
 
     DynamicCmp = (props) => {
         // console.log('props: from dynamic', props)
@@ -37,8 +29,7 @@ export class NotePreview extends React.Component {
                 return <VideoNote {...props} />
 
         }
-        // this.isRendered = false
-        console.log('hello:')
+      
     }
         
 
@@ -53,7 +44,6 @@ export class NotePreview extends React.Component {
             <Link to={"/note/" + note.id}>
                 <DynamicCmp note={note} />
             </Link>
-
             <Route path={"/note/" + note.id} component={NoteEdit} />
             <div>
                 <button className="btn" onClick={() => onRemoveNote(note.id)}>X</button>

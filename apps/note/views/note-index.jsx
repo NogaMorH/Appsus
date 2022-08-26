@@ -1,4 +1,4 @@
-import { NoteService } from '../services/note.service.js'
+import { noteService } from '../services/note.service.js'
 import { NoteList } from '../cmps/note-list.jsx'
 import { NoteSideNav } from "../cmps/note-side-nav.jsx"
 import { NoteEdit } from '../cmps/edit-note.jsx'
@@ -20,13 +20,13 @@ export class NoteIndex extends React.Component {
     }
 
     loadNotes = () => {
-        NoteService.query()
+        noteService.query(this.state.filterBy)
             .then(notes => this.setState({ notes }))
     }
 
     onRemoveNote = (noteId) => {
         console.log('noteId:', noteId)
-        NoteService.remove(noteId)
+        noteService.remove(noteId)
             .then(() => {
                 const notes = this.state.notes.filter(note => note.id !== noteId)
                 this.setState({ notes }
@@ -36,35 +36,35 @@ export class NoteIndex extends React.Component {
 
     onSelectedNote = (noteId) => {
         console.log('noteId:', noteId)
-        NoteService.getNoteById(noteId)
+        noteService.getNoteById(noteId)
             .then(note => this.setState({ selectedNote: note }))
     }
 
 
     saveNote = (newNote) => {
 
-        NoteService.save(newNote)
+        noteService.save(newNote)
             .then((note) => {
                 // this.loadNotes()
-                this.setState({notes:[note, ...this.state.notes]})
+                this.setState({ notes: [note, ...this.state.notes] })
             })
-        
+
     }
 
     onSetFilter = (filterBy) => {
-        this.setState({ filterBy }, this.loadNotes)
+        // console.log('filterBy:', filterBy)
+        this.setState({ filterBy }, () => {
+            this.loadNotes()
+        })
+
     }
 
-
-
-
-    
     render() {
-        const { notes, selectedNote } = this.state
+        const { notes } = this.state
         const { onRemoveNote, onSetFilter, onSelectedNote } = this
         if (!notes) return <div>Loading...</div>
-        
-        console.log('LENGTH:', this.state.notes.length);
+
+        // console.log('LENGTH:', this.state.notes.length);
         return (
             <section className="flex note-index">
                 <NoteSideNav />

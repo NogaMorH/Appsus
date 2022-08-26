@@ -1,4 +1,4 @@
-import { NoteService } from '../services/note.service.js'
+import { noteService } from '../services/note.service.js'
 export class NoteEdit extends React.Component {
 
     state = {
@@ -22,10 +22,10 @@ export class NoteEdit extends React.Component {
     }
 
     loadNote = () => {
-        console.log('this.props:', this.props)
+        // console.log('this.props:', this.props)
         if (!this.props.match) return
         const { noteId } = this.props.match.params
-        NoteService.getNoteById(noteId)
+        noteService.getNoteById(noteId)
             .then((note) => {
                 if (!note) return this.onGoBack()
                 this.setState({ note })
@@ -47,7 +47,7 @@ export class NoteEdit extends React.Component {
     onSaveNote = (ev) => {
         ev.preventDefault()
     this.props.saveNote(this.state.note)
-        // NoteService.save(this.state.note)
+        // noteService.save(this.state.note)
         // .then(() => {
         //         if (!this.props.match) return
         //         this.props.history.push('/note')
