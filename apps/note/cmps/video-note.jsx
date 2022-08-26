@@ -6,7 +6,7 @@ export class VideoNote extends React.Component {
 
         return <article className="flex note-video">
             <h3 contentEditable={true} suppressContentEditableWarning={true} className="note-title">{title}</h3>
-            <iframe width="230" height="210" src={url}></iframe>
+            <iframe  height="210" src={url}></iframe>
         </article>
 
     }

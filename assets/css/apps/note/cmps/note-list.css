@@ -1,15 +1,9 @@
 .note-list-container {
-    columns: 220px 3;
+    columns: 220px 4;
     column-gap: 32px;
     margin: 20px auto;
     padding: 20px 10px;
     background-color: var(--clr7);
 }
 
-
-/* text-align: center;
-margin: 20px auto;
-columns: 2;
-column-gap: 30px;
-align-items: center; */
 
