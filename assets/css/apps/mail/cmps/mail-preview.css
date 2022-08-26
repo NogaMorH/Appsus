@@ -9,6 +9,10 @@
     background-color: var(--clr7);
 }
 
+.mail-preview.selected {
+    background-color: var(--clr8);
+}
+
 .mail-preview .mail-checkbox {
     width: 17px;
     aspect-ratio: 1/1;
