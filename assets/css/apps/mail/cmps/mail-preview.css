@@ -2,4 +2,14 @@
     display: grid;
     grid-template-columns: 50px 140px 1fr 75px;
     gap: 10px;
+    background-color: var(--clr1);
+}
+
+.mail-preview.unread {
+    background-color: var(--clr7);
+}
+
+.mail-preview.unread .sender-name,
+.subject {
+    font-family: product-sans-bold, sans-serif;
 }

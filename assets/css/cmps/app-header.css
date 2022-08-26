@@ -6,6 +6,7 @@
 .app-header {
     display: flex;
     justify-content: space-between;
+    color: var(--clr6);
 }
 
 .app-header .logo {
@@ -19,6 +20,10 @@
 
 .app-header .logo-img {
     width: 30px;
+}
+
+.app-header .menu-btn {
+    width: 40px;
 }
 
 .app-header .app-nav>a:not(:last-child) {

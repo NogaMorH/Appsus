@@ -8,7 +8,6 @@ export class MailDetails extends React.Component {
     }
 
     componentDidMount() {
-        console.log('did mount')
         this.loadMail()
     }
 
@@ -18,7 +17,6 @@ export class MailDetails extends React.Component {
 
     loadMail = () => {
         const { mailId } = this.props.match.params
-        console.log('mailId:', mailId)
         mailService.getMailById(mailId)
             .then(mail => {
                 if (!mail) {
@@ -34,7 +32,6 @@ export class MailDetails extends React.Component {
     }
 
     render() {
-        console.log('this.state.mail:', this.state.mail)
         if (!this.state.mail) return <div></div>
         const { subject, body } = this.state.mail
         return <section className="flex mail-details-page">

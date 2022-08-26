@@ -8,7 +8,8 @@ export class MailIndex extends React.Component {
 
     state = {
         mails: null,
-        composeOpened: false
+        composeOpened: false,
+        filterBy: null
     }
 
     componentDidMount() {
@@ -16,7 +17,7 @@ export class MailIndex extends React.Component {
     }
 
     loadMails() {
-        mailService.query()
+        mailService.query(this.state.filterBy)
             .then(mails => {
                 this.setState({ mails })
             })
@@ -38,13 +39,23 @@ export class MailIndex extends React.Component {
         this.loadMails()
     }
 
+    onSetFilter = (filterBy) => {
+        // console.log('filterBy from mail index:', filterBy)
+        this.setState({ filterBy }, this.loadMails)
+    }
+
+    // onMailRead = (mailId) => {
+    //     console.log('mailId:', mailId)
+    // }
+
     render() {
         const { mails, composeOpened } = this.state
+        const { onSetFilter } = this
         if (!mails) return <div></div>
         return <section className="flex mail-index">
             <MailSideNav composeMail={this.composeMail} />
             <main>
-                <MailFilter />
+                <MailFilter onSetFilter={onSetFilter} />
                 <MailList mails={mails} onRemoveMail={this.onRemoveMail} />
             </main>
             {composeOpened && <MailCompose closeCompose={this.closeCompose} />}
