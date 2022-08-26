@@ -66,6 +66,64 @@ const gNotes = [
         id: utilService.makeId(),
         type: 'video',
         info: {
+            url: "https://www.youtube.com/embed/v=wO0A0XcWy88",
+            title: 'Fleet Foxes - Mykonos'
+        },
+        style: {
+            backgroundColor: 'white'
+        }
+    },
+    {
+        id: utilService.makeId(),
+        type: 'text',
+        isPinned: true,
+        info: {
+            title: 'Quotes',
+            text:"Happiness is only real, when shared. ― Christopher McCandless"
+        },
+        style: {
+            backgroundColor: 'white'
+        }
+    },
+    {
+        id: utilService.makeId(),
+        type: 'text',
+        isPinned: true,
+        info: {
+            title: 'CR',
+            text: 'https://css-tricks.com/snippets/css/a-guide-to-flexbox/'
+        },
+        style: {
+            backgroundColor: 'white'
+        }
+    },
+    {
+        id: utilService.makeId(),
+        type: 'image',
+        info: {
+            url: 'https://lh3.ggpht.com/-kjfBnCLSUr8/UnCdF7NXbYI/AAAAAAAAti0/9kpiCidQWl4/rock-islands-palau-96.jpg?imgmax=800',
+            title: 'Palau island'
+        },
+        style: {
+            backgroundColor: 'white'
+        }
+    },
+    {
+        id: utilService.makeId(),
+        type: 'image',
+        info: {
+            url: 'https://www.travelandleisure.com/thmb/EOI9YwqppLli0TG5LsWrYz4wUAk=/900x0/filters:no_upscale():max_bytes(150000):strip_icc():gifv():format(webp)/jellyfish-lake-reopening-JELLY119-6e2116ca23764b9aa0e56096db7973b4.jpg',
+            title: 'Bobi and Me'
+        },
+        style: {
+            backgroundColor: 'white'
+        }
+    },
+    {
+
+        id: utilService.makeId(),
+        type: 'video',
+        info: {
             url: "https://www.youtube.com/embed/TWcyIpul8OE",
             title: 'Fleet Foxes - Mykonos'
         },
@@ -73,8 +131,7 @@ const gNotes = [
             backgroundColor: 'white'
         }
     }
-
-
+    
 ]
 
 function query() {
@@ -113,9 +170,10 @@ function updateNote(noteToUpdate) {
 function addNote({ title, text, type, url }) {
     let notes = _loadNotesFromStorage()
     const note = createNote(title, text, type, url)
+    console.log('note:', note)
     notes.unshift(note)
     _saveNotesToStorage(notes)
-    return Promise.resolve(note)
+    return Promise.resolve({...note})
 }
 
 function copyNote(note){

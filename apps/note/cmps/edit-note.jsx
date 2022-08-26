@@ -46,11 +46,12 @@ export class NoteEdit extends React.Component {
 
     onSaveNote = (ev) => {
         ev.preventDefault()
-        NoteService.save(this.state.note)
-        .then(() => {
-                if (!this.props.match) return
-                this.props.history.push('/note')
-            })
+    this.props.saveNote(this.state.note)
+        // NoteService.save(this.state.note)
+        // .then(() => {
+        //         if (!this.props.match) return
+        //         this.props.history.push('/note')
+        //     })
     }
 
     onGoBack = () => {
@@ -66,11 +67,6 @@ export class NoteEdit extends React.Component {
         return <section className="display-note-container">
             <form onSubmit={onSaveNote} className="add-note-form">
 
-                <input type="text"
-                    name="title"
-                    value={title}
-                    placeholder="Title:"
-                    onChange={handleChange} />
 
                 <textarea
                     name="text"

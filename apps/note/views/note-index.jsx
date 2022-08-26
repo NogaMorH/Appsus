@@ -41,10 +41,14 @@ export class NoteIndex extends React.Component {
     }
 
 
-    onAddNote = (newNote) => {
-        NoteService.addNote(newNote)
-            .then(this.setState({ notes: [newNote, ...this.state.notes] })
-            )
+    saveNote = (newNote) => {
+
+        NoteService.save(newNote)
+            .then((note) => {
+                // this.loadNotes()
+                this.setState({notes:[note, ...this.state.notes]})
+            })
+        
     }
 
     onSetFilter = (filterBy) => {
@@ -54,22 +58,23 @@ export class NoteIndex extends React.Component {
 
 
 
-
-
+    
     render() {
         const { notes, selectedNote } = this.state
         const { onRemoveNote, onSetFilter, onSelectedNote } = this
         if (!notes) return <div>Loading...</div>
-
+        
+        console.log('LENGTH:', this.state.notes.length);
         return (
             <section className="flex note-index">
                 <NoteSideNav />
                 <main className="flex main-content ">
                     <div className="input-container">
-                        <NoteEdit />
+
+                        <NoteEdit saveNote={this.saveNote} />
                         <NoteFilter onSetFilter={onSetFilter} />
                     </div>
-                    <NoteList notes={notes} onRemoveNote={onRemoveNote} onSelectedNote={onSelectedNote} />
+                    <NoteList notes={this.state.notes} onRemoveNote={onRemoveNote} onSelectedNote={onSelectedNote} />
                 </main>
             </section>
 

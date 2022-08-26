@@ -1,4 +1,23 @@
-.note-preview img {
+.note-preview {
+    border-radius: 8px;
+    box-shadow: inset 1px 1px 0 rgb(0 0 0 / 10%), inset 0 -1px 0 rgb(0 0 0 / 7%);
+}
+
+.note-preview .note-image {
     object-fit: cover;
     width: 100%;
+}
+
+.note-preview :hover {
+    border: 1px solid transparent;
+    transition-timing-function: ease-in;
+}
+
+.note-title {
+    font-weight: bold;
+    font-size: 1.3rem;
+}
+
+.note-text {
+    font-size: 1rem
 }

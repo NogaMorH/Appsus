@@ -4,8 +4,8 @@ export class ImageNote extends React.Component {
         const { title, url } = this.props.note.info
 
         return <article className="flex note-preview">
-            <h3 contentEditable={true} suppressContentEditableWarning={true}>{title}</h3>
-            <img src={url}/>
+            <h3 contentEditable={true} suppressContentEditableWarning={true} className="note-title">{title}</h3>
+            <img className="note-image" src={url}/>
         </article>
 
     }

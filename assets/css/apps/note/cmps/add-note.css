@@ -1,15 +1,29 @@
-.add-note-container {
-    max-width: 20vw;
-}
 
+/* 
 .add-note-form input {
     width: 100%;
-}
+} */
 
 .add-note-form textarea {
     width: 100%;
     resize: none;
+    height: 3em;
+    padding: 3px;
+    transition: all 0.5s ease;
+    margin-top: 10px;
 
+
+}
+/* 
+textarea {
+    height: 1em;
+    width: 50%;
+    padding: 3px;
+    transition: all 0.5s ease;
+} */
+
+textarea:focus {
+    height: 6em;
 }
 
 .add-note-form .btn-save {
