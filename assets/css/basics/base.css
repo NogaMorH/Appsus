@@ -25,6 +25,7 @@ h6 {
 .app {
     display: flex;
     flex-direction: column;
+    flex-grow: 1;
 }
 
 a {

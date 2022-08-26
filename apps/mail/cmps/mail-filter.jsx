@@ -1,5 +1,14 @@
 export class MailFilter extends React.Component {
+    state = {
+        filterBy: {
+            text: '',
+        }
+    }
+
     render() {
-        return
+        return <input
+            type="search"
+            name="text"
+            placeholder="search" />
     }
 }
