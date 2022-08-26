@@ -1,9 +1,10 @@
 import { NoteService } from '../services/note.service.js'
 import { NoteList } from '../cmps/note-list.jsx'
 import { NoteSideNav } from "../cmps/note-side-nav.jsx"
-import { NoteAdd } from '../cmps/note-add.jsx'
+import { NoteEdit } from '../cmps/edit-note.jsx'
 import { NoteFilter } from '../cmps/note-filter.jsx'
-
+import { eventBusService } from "../../../services/event-bus.service.js"
+const { Link, Route } = ReactRouterDOM
 
 
 export class NoteIndex extends React.Component {
@@ -11,7 +12,7 @@ export class NoteIndex extends React.Component {
     state = {
         notes: null,
         filterBy: null,
-        isNoteOpen: false
+        selectedNote: null
     }
 
     componentDidMount() {
@@ -33,9 +34,12 @@ export class NoteIndex extends React.Component {
             })
     }
 
-    onOpenNote = (noteId) => {
-        this.setState(isNoteOpen)
+    onSelectedNote = (noteId) => {
+        console.log('noteId:', noteId)
+        NoteService.getNoteById(noteId)
+            .then(note => this.setState({ selectedNote: note }))
     }
+
 
     onAddNote = (newNote) => {
         NoteService.addNote(newNote)
@@ -48,19 +52,24 @@ export class NoteIndex extends React.Component {
     }
 
 
+
+
+
+
     render() {
-        const { notes } = this.state
-        const { onRemoveNote, onAddNote, onSetFilter } = this
+        const { notes, selectedNote } = this.state
+        const { onRemoveNote, onSetFilter, onSelectedNote } = this
         if (!notes) return <div>Loading...</div>
+
         return (
             <section className="flex note-index">
                 <NoteSideNav />
                 <main className="flex main-content ">
                     <div className="input-container">
-                        <NoteAdd onAddNote={onAddNote} />
+                        <NoteEdit />
                         <NoteFilter onSetFilter={onSetFilter} />
                     </div>
-                    <NoteList notes={notes} onRemoveNote={onRemoveNote} />
+                    <NoteList notes={notes} onRemoveNote={onRemoveNote} onSelectedNote={onSelectedNote} />
                 </main>
             </section>
 
