@@ -1,5 +1,5 @@
 .app-header-container {
-    background: lightcyan;
+    background: var(--clr7);
     border-bottom: 2px solid white;
 }
 
@@ -8,12 +8,21 @@
     justify-content: space-between;
 }
 
-.app-header .app-nav a {
+.app-header .logo {
+    font-size: 26px;
+    padding: 10px 0;
+}
+
+.app-header .logo-text {
+    margin-inline-start: 5px;
+}
+
+.app-header .logo-img {
+    width: 30px;
+}
+
+.app-header .app-nav>a:not(:last-child) {
     margin: .5em;
 }
 
-.app-header .app-nav a.active {
-    color: darkblue;
-    font-weight: bold;
-    text-decoration: overline;
-}
+.app-header .app-nav a.active {}

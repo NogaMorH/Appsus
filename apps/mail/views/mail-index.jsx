@@ -2,6 +2,7 @@ import { mailService } from '../services/mail.service.js'
 import { MailList } from "../cmps/mail-list.jsx"
 import { MailSideNav } from "../cmps/mail-side-nav.jsx"
 import { MailCompose } from "../cmps/mail-compose.jsx"
+import { MailFilter } from "../cmps/mail-filter.jsx"
 
 export class MailIndex extends React.Component {
 
@@ -42,7 +43,10 @@ export class MailIndex extends React.Component {
         if (!mails) return <div></div>
         return <section className="flex mail-index">
             <MailSideNav composeMail={this.composeMail} />
-            <MailList mails={mails} onRemoveMail={this.onRemoveMail} />
+            <main>
+                <MailFilter />
+                <MailList mails={mails} onRemoveMail={this.onRemoveMail} />
+            </main>
             {composeOpened && <MailCompose closeCompose={this.closeCompose} />}
         </section>
     }

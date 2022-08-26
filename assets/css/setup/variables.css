@@ -1,5 +1,4 @@
 :root {
-    --main-bg-color: lightblue;
 
     /* mail list bg color: */
 
@@ -30,7 +29,7 @@
     /* bg color: */
 
     --var7: #ffffff;
-    
+
     /* selected page color: */
 
     --var8: #fdefc3;
@@ -46,18 +45,4 @@
     /* grey box shadow inside note  color: */
 
     --var11: #e1e1e1
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
