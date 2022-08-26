@@ -7,7 +7,9 @@ export const noteService = {
     createNote,
     addNote,
     getNoteById,
-    save
+    save,
+    copyNote,
+    setNoteBgColor
 }
 
 const STORAGE_KEY = 'notesDB'
@@ -191,6 +193,24 @@ function addNote({ title, text, type, url }) {
     return Promise.resolve({ ...note })
 }
 
+function createNote(title, text, type, url) {
+    console.log('type from service!!!!!:', type)
+    let newNote = {
+        id: utilService.makeId(),
+        type,
+        info: {
+            title,
+        },
+        isPinned: false
+    }
+    if (newNote.type === 'img' || newNote.type === 'video') {
+        newNote.info.url = url
+
+    } else newNote.info.text = text
+    return newNote
+
+}
+
 function copyNote(note) {
     console.log('note from servive copynote:', note)
     const notes = _loadNotesFromStorage()
@@ -216,29 +236,19 @@ function createNoteCopy(note) {
     return noteCopy
 }
 
-function createNote(title, text, type, url) {
-    console.log('type from service!!!!!:', type)
-    let newNote = {
-        id: utilService.makeId(),
-        type,
-        info: {
-            title,
-        },
-        isPinned: false
-    }
-    if (newNote.type === 'img' || newNote.type === 'video') {
-        newNote.info.url = url
-
-    } else newNote.info.text = text
-    return newNote
-
-}
-
 function getNoteById(noteId) {
     if (!noteId) return Promise.resolve(null)
     const notes = _loadNotesFromStorage()
     const note = notes.find(note => noteId === note.id)
     return Promise.resolve(note)
+}
+
+function setNoteBgColor(noteId, color){
+    const notes = _loadNotesFromStorage()
+    notes.forEach(note => {
+    if (note.id === noteId) note.style.backgroundColor = color})
+    _saveNotesToStorage(notes)
+    return Promise.resolve()
 }
 
 

@@ -29,22 +29,30 @@ export class NotePreview extends React.Component {
                 return <VideoNote {...props} />
 
         }
-      
+
     }
-        
+
+    onSelectedNote = () => {
+       const { id } = this.props.note
+        this.setState({ isSelected: true }, () => this.props.setSelectedNote(id))
+    }
+
 
     render() {
-        const { note, onRemoveNote, onAddNote, onSelectNote } = this.props
+        const { note, onRemoveNote, onAddNote, setSelectedNote } = this.props
         // console.log('note:from note preview', note)
         // console.log('this.props:', this.props)
         const { DynamicCmp } = this
+        if(this.state.isSelected) return <NoteEdit />
 
-
-        return <article className="flex note-preview">
-            <Link to={"/note/" + note.id}>
+        return <article onClick={this.onSelectedNote} className="flex note-preview">
+            {/* <Link to={"/note/" + note.id}> */}
                 <DynamicCmp note={note} />
-            </Link>
-            <Route path={"/note/" + note.id} component={NoteEdit} />
+            {/* </Link>
+            <Route path={"/note/:noteId"} component={NoteEdit} /> */}
+            {/* <NoteEdit /> */}
+
+
             <div>
                 <button className="btn" onClick={() => onRemoveNote(note.id)}>X</button>
             </div>

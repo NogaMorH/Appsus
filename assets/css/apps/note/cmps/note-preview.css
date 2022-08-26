@@ -1,23 +1,39 @@
 .note-preview {
     border-radius: 8px;
-    box-shadow: inset 1px 1px 0 rgb(0 0 0 / 10%), inset 0 -1px 0 rgb(0 0 0 / 7%);
+    position: relative;
+    break-inside: avoid-column;
+    border: .8px solid #1d1d1d;
+    /* border-bottom: none; */
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+   
 }
 
 .note-preview .note-image {
     object-fit: cover;
-    width: 100%;
+    width: 90%;
+    margin: 10px auto;
 }
 
 .note-preview :hover {
     border: 1px solid transparent;
     transition-timing-function: ease-in;
+    box-shadow: inset 1px 1px 0 rgb(0 0 0 / 10%), inset 0 -1px 0 rgb(0 0 0 / 7%);
 }
 
 .note-title {
     font-weight: bold;
     font-size: 1.3rem;
+    margin-top: 3px;
+    margin-inline-start: 12px;
 }
 
 .note-text {
-    font-size: 1rem
+    font-size: 1rem;
+    /* border: none; */
+}
+
+.note-preview iframe {
+    margin: 10px auto;
 }
