@@ -35,6 +35,7 @@ export class MailCompose extends React.Component {
         const { closeCompose } = this.props
         return <section className="grid mail-compose">
             <header className="mail-compose-header">
+                New message
                 <button className="btn close-btn" onClick={closeCompose}>
                     <img src="../../../assets/img/close.svg" />
                 </button>
@@ -53,7 +54,7 @@ export class MailCompose extends React.Component {
                     placeholder="Subject" />
 
                 <textarea onChange={this.handleChange} name="body"></textarea>
-                <button>Send</button>
+                <button className="btn send-btn">Send</button>
             </form>
         </section>
     }
