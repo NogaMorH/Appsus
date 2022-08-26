@@ -8,22 +8,25 @@
     width: 100%;
     resize: none;
     height: 50px;
-    padding: 8px;
+    padding-left: 10px;
     transition: all 0.5s ease;
     margin-top: 30px;
     border-radius: 10px;
     position: relative;
-    box-shadow:1px 1px 6px;
+    box-shadow: 1px 2px 6px 0 rgb(86 74 74 / 67%);
+    padding-top: 15px;
 
-
+    
+    
 }
 
 .add-note-form {
     width: 100%;
+    margin-left: 2px;
 }
 
 .display-note-container{
-    width: 50%;
+    width: 60%;
 }
 
 textarea:focus {
@@ -34,7 +37,7 @@ textarea:focus {
    position: absolute;
 }
 
-.input-container {
+.main-content .input-container {
     display: flex;
     justify-content: space-between;
     width: 100%;

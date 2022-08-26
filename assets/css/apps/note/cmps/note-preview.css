@@ -3,10 +3,11 @@
     position: relative;
     break-inside: avoid-column;
     border: .8px solid #1d1d1d;
-    /* border-bottom: none; */
     margin-bottom: 20px;
     display: flex;
     flex-direction: column;
+    padding: 12px;
+    font-family: product-sans-regular, sans-serif;
 
 }
 
@@ -27,6 +28,7 @@
     font-size: 1.3rem;
     margin-top: 3px;
     margin-inline-start: 12px;
+    font-family: product-sans-bold, sans-serif;
 }
 
 .note-text {
@@ -55,4 +57,8 @@
     flex-direction: column;
 
 
+}
+
+.note-preview .control-btn-remove{
+    width: 35px;
 }
