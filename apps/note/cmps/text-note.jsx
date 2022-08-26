@@ -1,5 +1,11 @@
 export class TextNote extends React.Component {
 
+    state = {
+        text: this.props.note.info.text,
+        title: this.props.note.info.title,
+        editMode: false
+    }
+
 
     onUpdateNewNote = (ev) => {
         console.log('ev.target.innerText:', ev.target.innerText)
@@ -8,7 +14,7 @@ export class TextNote extends React.Component {
             info: {
                 ...this.props.note.info,
                 text: ev.target.innerText,
-                title: this.state.title
+                // title: this.state.title
             }
         }
 
@@ -17,8 +23,9 @@ export class TextNote extends React.Component {
         this.onToggleEditMode()
     }
 
+
     render() {
-        const { text, title } = this.props.note.info
+        const { text, title } = this.state
         const { onUpdateNewNote} = this
 
         return (<article className="flex note-text">
@@ -29,7 +36,6 @@ export class TextNote extends React.Component {
                 <p contentEditable={true} suppressContentEditableWarning={true} onClick={this.onToggleEditMode} onBlur={onUpdateNewNote}
                  className="note-text">{text}</p>
             </div>
-        
         </article>)
     }
 
