@@ -8,7 +8,7 @@ export class MailDetails extends React.Component {
     }
 
     componentDidMount() {
-        console.log('did mount')
+        console.log('this:', this)
         this.loadMail()
     }
 
@@ -18,7 +18,6 @@ export class MailDetails extends React.Component {
 
     loadMail = () => {
         const { mailId } = this.props.match.params
-        console.log('mailId:', mailId)
         mailService.getMailById(mailId)
             .then(mail => {
                 if (!mail) {
@@ -29,17 +28,17 @@ export class MailDetails extends React.Component {
             })
     }
 
-    onGoBack() {
+    onGoBack = () => {
         this.props.history.push('/mail')
     }
 
     render() {
-        console.log('this.state.mail:', this.state.mail)
         if (!this.state.mail) return <div></div>
         const { subject, body } = this.state.mail
         return <section className="flex mail-details-page">
             <MailSideNav />
             <main className="mail-details">
+                <button onClick={this.onGoBack} className="btn">Go back</button>
                 <h3>{subject}</h3>
                 <p>{body}</p>
             </main>

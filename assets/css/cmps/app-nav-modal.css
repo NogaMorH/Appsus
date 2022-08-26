@@ -1,0 +1,20 @@
+.app-nav-modal {
+    position: absolute;
+    right: 0;
+    gap: 10px;
+    top: 74px;
+    z-index: 10;
+    background-color: white;
+    padding: 10px;
+    box-shadow: inset -1px 2px 5px 0 #6f6f6f52, -3px 6px 5px 0 #6f6f6f52;
+}
+
+.app-nav-modal .app-nav-icon {
+    width: 70px;
+}
+
+.app-nav-modal .app-nav-link {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}

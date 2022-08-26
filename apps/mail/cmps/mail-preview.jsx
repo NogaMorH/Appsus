@@ -3,7 +3,13 @@ const { Link } = ReactRouterDOM
 export class MailPreview extends React.Component {
 
     state = {
-        isSelected: false
+        isSelected: false,
+        isRead: false
+    }
+
+    componentDidMount() {
+        const { isRead } = this.props.mail
+        this.setState({ isRead })
     }
 
     setTimeForDisplay = () => {
@@ -24,18 +30,33 @@ export class MailPreview extends React.Component {
             })
     }
 
+    getReadClass = () => {
+        return (this.state.isRead) ? 'read' : 'unread'
+    }
+
+    // onOpenMail = () => {
+    //     const { id } = this.props.mail
+    //     if (this.state.isRead) return
+    //     console.log('open mail')
+    //     this.setState({ isRead: true }, () => {
+    //         console.log('id from set state:', id)
+    //         this.props.onMailRead(id)
+    //     })
+    // }
+
     render() {
         const { subject, from, body, id } = this.props.mail
         const { senderName } = from
-        return <li className="mail-preview">
-            <span><input type="checkbox" onClick={this.onToggleSelect} /></span>
-            <Link to={"/mail/" + id} className="hide-long-text">
+        const readClass = this.getReadClass()
+        return <li className={`mail-preview ${readClass}`}>
+            <span><input type="checkbox" onClick={this.onToggleSelect} className="mail-checkbox" /></span>
+            <Link to={"/mail/" + id} className="hide-long-text sender-name" onClick={this.onOpenMail}>
                 {senderName}
             </Link>
-            <Link to={"/mail/" + id} className="hide-long-text">
-                {subject} - {body}
+            <Link to={"/mail/" + id} className="hide-long-text" onClick={this.onOpenMail}>
+                <span className="subject">{subject}</span> - {body}
             </Link>
-            <Link to={"/mail/" + id} className="hide-long-text">
+            <Link to={"/mail/" + id} className="hide-long-text time" onClick={this.onOpenMail}>
                 {this.setTimeForDisplay()}
             </Link>
         </li>

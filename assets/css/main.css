@@ -14,6 +14,7 @@
 /* Cmps */
 @import './cmps/user-msg.css';
 @import './cmps/app-header.css';
+@import './cmps/app-nav-modal.css';
 
 /* Apps */
 /* Mail views */
@@ -25,6 +26,7 @@
 @import './apps/mail/cmps/mail-preview.css';
 @import './apps/mail/cmps/mail-side-nav.css';
 @import './apps/mail/cmps/mail-compose.css';
+@import './apps/mail/cmps/mail-filter.css';
 
 /* Notes views */
 @import './apps/note/views/note-index.css';

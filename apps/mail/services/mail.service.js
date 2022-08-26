@@ -163,11 +163,26 @@ const gMails = [
     }
 ]
 
-function query() {
+function query(filterBy) {
     let mails = _loadMailsFromStorage()
     if (!mails) {
         mails = gMails
         _SaveMailsToStorage(mails)
+    }
+
+    if (filterBy) {
+        // console.log('filterBy from service:', filterBy)
+        let { text } = filterBy
+        // console.log('text:', text)
+        mails = mails.filter(mail => {
+            const { subject, body, from } = mail
+            const { senderName, senderAddress } = from
+            console.log('subject from service', subject)
+            if (subject && subject.toUpperCase().includes(text.toUpperCase())) return true
+            else if (body && body.toUpperCase().includes(text.toUpperCase())) return true
+            else return senderName.toUpperCase().includes(text.toUpperCase()) ||
+                senderAddress.toUpperCase().includes(text.toUpperCase())
+        })
     }
     return Promise.resolve(mails)
 }

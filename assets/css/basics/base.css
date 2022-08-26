@@ -50,3 +50,8 @@ ul {
 .btn {
     cursor: pointer;
 }
+
+p {
+    font-size: 14px;
+    margin: 0;
+}

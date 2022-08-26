@@ -1,28 +1,29 @@
 .app-header-container {
     background: var(--clr7);
     border-bottom: 2px solid white;
+    box-shadow: -1px 1px 7px 0 #6f6f6f59;
 }
 
 .app-header {
     display: flex;
     justify-content: space-between;
+    color: var(--clr6);
+    position: relative;
 }
 
 .app-header .logo {
-    font-size: 26px;
-    padding: 10px 0;
+    padding: 0.625em 0;
 }
 
 .app-header .logo-text {
+    font-size: 1.625em;
     margin-inline-start: 5px;
 }
 
 .app-header .logo-img {
-    width: 30px;
+    width: 1.875em;
 }
 
-.app-header .app-nav>a:not(:last-child) {
-    margin: .5em;
+.app-header .menu-btn {
+    width: 40px;
 }
-
-.app-header .app-nav a.active {}
