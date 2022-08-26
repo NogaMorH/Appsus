@@ -1,7 +1,7 @@
 import { TextNote } from "./text-note.jsx"
 import { ImageNote } from "./image-note.jsx"
 import { VideoNote } from "./video-note.jsx"
-import { NoteEdit } from "./edit-note.jsx"
+import { AddNote } from "./add-note.jsx"
 import { eventBusService } from "../../../services/event-bus.service.js"
 const { Link, Route } = ReactRouterDOM
 
@@ -29,22 +29,21 @@ export class NotePreview extends React.Component {
                 return <VideoNote {...props} />
 
         }
-      
+
     }
-        
+
+    onSelectedNote = () => {
+        const { id } = this.props.note
+        this.setState({ isSelected: true }, () => this.props.setSelectedNote(id))
+    }
+
 
     render() {
-        const { note, onRemoveNote, onAddNote, onSelectNote } = this.props
-        // console.log('note:from note preview', note)
-        // console.log('this.props:', this.props)
+        const { note, onRemoveNote, onAddNote, setSelectedNote, onUpdateNote } = this.props
         const { DynamicCmp } = this
 
-
-        return <article className="flex note-preview">
-            <Link to={"/note/" + note.id}>
-                <DynamicCmp note={note} />
-            </Link>
-            <Route path={"/note/" + note.id} component={NoteEdit} />
+        return <article onClick={this.onSelectedNote} className="flex note-preview">
+            <DynamicCmp note={note} onUpdateNote={onUpdateNote} />
             <div>
                 <button className="btn" onClick={() => onRemoveNote(note.id)}>X</button>
             </div>
@@ -70,3 +69,12 @@ export class NotePreview extends React.Component {
 //     </article>
 
 // onAddNote={onAddNote}
+
+
+{/* <Link to={"/note/" + note.id}> */ }
+
+{/* </Link>
+            <Route path={"/note/:noteId"} component={NoteEdit} /> */}
+{/* {this.state.isSelected ? <NoteEdit/> : <DynamicCmp note={note} /> } */ }
+
+{/* {this.state.isSelected && <AddNote />}  */ }

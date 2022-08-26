@@ -11,8 +11,12 @@
     padding: 3px;
     transition: all 0.5s ease;
     margin-top: 10px;
+    border-radius: 10px;
 
+}
 
+.add-note-form {
+    width: 50vw;
 }
 /* 
 textarea {
@@ -30,6 +34,11 @@ textarea:focus {
     position: relative;
     display: flex;
     align-self: end;
+}
+
+.input-container {
+    display: flex;
+
 }
 /* 
 .add-note-container .btn-container {

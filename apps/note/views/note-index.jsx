@@ -1,7 +1,7 @@
 import { noteService } from '../services/note.service.js'
 import { NoteList } from '../cmps/note-list.jsx'
 import { NoteSideNav } from "../cmps/note-side-nav.jsx"
-import { NoteEdit } from '../cmps/edit-note.jsx'
+import { AddNote } from '../cmps/add-note.jsx'
 import { NoteFilter } from '../cmps/note-filter.jsx'
 import { eventBusService } from "../../../services/event-bus.service.js"
 const { Link, Route } = ReactRouterDOM
@@ -34,14 +34,15 @@ export class NoteIndex extends React.Component {
             })
     }
 
-    onSelectedNote = (noteId) => {
-        console.log('noteId:', noteId)
+    setSelectedNote = (noteId) => {
         noteService.getNoteById(noteId)
-            .then(note => this.setState({ selectedNote: note }))
+            .then(note => this.setState({ ...this.state, selectedNote: note }, () => {
+            console.log('noteId:', noteId)
+            }))
     }
 
 
-    saveNote = (newNote) => {
+    onUpdateNote = (newNote) => {
 
         noteService.save(newNote)
             .then((note) => {
@@ -59,9 +60,15 @@ export class NoteIndex extends React.Component {
 
     }
 
+    onSetNoteBgColor = (noteId,color) => {
+        noteService.setNoteBgColor(noteId,color)
+            .then
+    }   
+    
+
     render() {
         const { notes } = this.state
-        const { onRemoveNote, onSetFilter, onSelectedNote } = this
+        const { onRemoveNote, onSetFilter, setSelectedNote, onUpdateNote } = this
         if (!notes) return <div>Loading...</div>
 
         // console.log('LENGTH:', this.state.notes.length);
@@ -70,11 +77,10 @@ export class NoteIndex extends React.Component {
                 <NoteSideNav />
                 <main className="flex main-content ">
                     <div className="input-container">
-
-                        <NoteEdit saveNote={this.saveNote} />
+                        <AddNote saveNote={this.onUpdateNote} />
                         <NoteFilter onSetFilter={onSetFilter} />
                     </div>
-                    <NoteList notes={this.state.notes} onRemoveNote={onRemoveNote} onSelectedNote={onSelectedNote} />
+                    <NoteList notes={this.state.notes} onRemoveNote={onRemoveNote} setSelectedNote={setSelectedNote} onUpdateNote={onUpdateNote}/>
                 </main>
             </section>
 
