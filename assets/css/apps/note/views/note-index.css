@@ -1,8 +1,9 @@
-
 .note-index .main-content {
     flex-direction: column;
 }
-/* 
-.main-content .input-container {
 
-} */
+.main-content .input-container {
+    display: flex;
+    justify-content: space-around;
+
+}

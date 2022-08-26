@@ -16,9 +16,10 @@ export class NoteButtons extends React.Component {
         return <section className="note-buttons">
             <button className="btn" >Add img</button>
             <button className="btn">bg color</button>
-            <button className="btn">delete </button>
+            <button className="btn">remove </button>
             <button className="btn">Duplicate </button>
             <button className="btn">save </button>
         </section>
     }
 }
+
