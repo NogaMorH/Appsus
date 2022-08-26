@@ -12,7 +12,6 @@ export class MailList extends React.Component {
     }
 
     render() {
-        console.log('this.props:', this.props)
         const { mails } = this.props
         return <main className="main-layout mail-list-container">
             <button className="btn" onClick={() => this.props.onRemoveMail(this.state.selectedMails)}>Remove</button>
