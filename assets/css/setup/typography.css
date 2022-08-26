@@ -8,7 +8,12 @@
     src: url(../../fonts/product-sans/ProductSans-Regular.ttf);
 }
 
-@font-face {
+/* @font-face {
     font-family: product-sans-thin;
     src: url(../../fonts/product-sans/ProductSans-Thin.ttf);
+} */
+
+@font-face {
+    font-family: product-sans-bold;
+    src: url(../../fonts/product-sans/ProductSans-bold.ttf);
 }

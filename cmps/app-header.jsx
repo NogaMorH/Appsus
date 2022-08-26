@@ -2,9 +2,10 @@ const { Link, NavLink, withRouter } = ReactRouterDOM
 export function _AppHeader() {
 
     return <header className="app-header-container">
-        <div className="main-layout app-header">
-            <Link to="/">
-                <h3>LOGO!</h3>
+        <div className="main-layout flex align-center app-header">
+            <Link to="/" className="flex align-center logo">
+                <img src="../assets/img/logo.png" className="logo-img" alt="logo" />
+                <h3 className="logo-text">Appsus</h3>
             </Link>
             <nav className="app-nav">
                 <NavLink exact to="/">Home</NavLink>

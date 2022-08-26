@@ -43,8 +43,10 @@ export class MailIndex extends React.Component {
         if (!mails) return <div></div>
         return <section className="flex mail-index">
             <MailSideNav composeMail={this.composeMail} />
-            <MailFilter />
-            <MailList mails={mails} onRemoveMail={this.onRemoveMail} />
+            <main>
+                <MailFilter />
+                <MailList mails={mails} onRemoveMail={this.onRemoveMail} />
+            </main>
             {composeOpened && <MailCompose closeCompose={this.closeCompose} />}
         </section>
     }

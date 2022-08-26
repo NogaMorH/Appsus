@@ -5,10 +5,15 @@ export class MailFilter extends React.Component {
         }
     }
 
+    onHandleChange = ({ target }) => {
+
+    }
+
     render() {
         return <input
             type="search"
             name="text"
-            placeholder="search" />
+            placeholder="search"
+            onChange={this.onHandleChange} />
     }
 }
