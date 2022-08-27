@@ -35,7 +35,7 @@ const gNotes = [
             title: 'Bobi and Me'
         },
         style: {
-            backgroundColor: 'white'
+            backgroundColor: 'blue'
         }
     },
     // {
@@ -60,7 +60,7 @@ const gNotes = [
             title: 'Fleet Foxes - Mykonos'
         },
         style: {
-            backgroundColor: 'white'
+            backgroundColor: 'red1'
         }
     },
     {
@@ -68,7 +68,7 @@ const gNotes = [
         id: utilService.makeId(),
         type: 'video',
         info: {
-            url: "https://www.youtube.com/embed/v=wO0A0XcWy88",
+            url: "https://www.youtube.com/embed/TWcyIpul8OE",
             title: 'Fleet Foxes - Mykonos'
         },
         style: {
@@ -126,7 +126,7 @@ const gNotes = [
         id: utilService.makeId(),
         type: 'video',
         info: {
-            url: "https://www.youtube.com/embed/v=TWcyIpul8OE",
+            url: "https://www.youtube.com/embed/wO0A0XcWy88",
             title: 'Fleet Foxes - Mykonos'
         },
         style: {
@@ -243,7 +243,6 @@ function setNoteBgColor(noteId, color) {
     _saveNotesToStorage(notes)
 
 }
-
 
 function _saveNotesToStorage(notes) {
     storageService.saveToStorage(STORAGE_KEY, notes)

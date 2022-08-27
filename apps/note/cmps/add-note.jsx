@@ -31,7 +31,6 @@ export class AddNote extends React.Component {
             })
     }
 
-
     handleChange = ({ target }) => {
         const field = target.name
         const value = target.value

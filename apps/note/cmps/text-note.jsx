@@ -13,7 +13,6 @@ export class TextNote extends React.Component {
         this.props.onUpdateNote(newNote)
     }
 
-
     render() {
         const { text, title } = this.props.note.info
         const { onUpdateNewNote} = this

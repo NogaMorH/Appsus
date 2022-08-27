@@ -4,10 +4,7 @@ import { NoteSideNav } from "../cmps/note-side-nav.jsx"
 import { AddNote } from '../cmps/add-note.jsx'
 import { NoteFilter } from '../cmps/note-filter.jsx'
 import { eventBusService } from "../../../services/event-bus.service.js"
-import { showErrorMsg, showSuccessMsg } from './../services/event-bus.service.js';
-
 const { Link, Route } = ReactRouterDOM
-
 
 export class NoteIndex extends React.Component {
 
