@@ -10,7 +10,7 @@ export class NoteList extends React.Component {
         if(!notes) return <h3>Loading...</h3>
         return <main className="main-layout note-list-container">
         {notes.map(note => {
-           return <NotePreview note={note} key={note.id} onRemoveNote={onRemoveNote} onAddNotes={onAddNotes} setSelectedNote={setSelectedNote} onUpdateNote={onUpdateNote} /> })}
+           return <NotePreview className="note-preview-container" note={note} key={note.id} onRemoveNote={onRemoveNote} onAddNotes={onAddNotes} setSelectedNote={setSelectedNote} onUpdateNote={onUpdateNote} /> })}
            
    </main>
 

@@ -126,7 +126,7 @@ const gNotes = [
         id: utilService.makeId(),
         type: 'video',
         info: {
-            url: "https://www.youtube.com/embed/v=wO0A0XcWy88",
+            url: "https://www.youtube.com/embed/v=TWcyIpul8OE",
             title: 'Fleet Foxes - Mykonos'
         },
         style: {

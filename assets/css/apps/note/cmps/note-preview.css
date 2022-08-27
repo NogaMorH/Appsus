@@ -2,7 +2,7 @@
     border-radius: 8px;
     position: relative;
     break-inside: avoid-column;
-    border: 3px solid var(--clr11);
+    border: 2.2px solid var(--clr11);
     margin-bottom: 20px;
     display: flex;
     flex-direction: column;
@@ -15,13 +15,14 @@
     object-fit: cover;
     width: 100%;
     border-radius: 10px;
+    opacity: 0.95;
+
 }
 
-.note-preview :hover {
-    border: 1px solid transparent;
-    transition-timing-function: ease-in;
-    /* box-shadow: inset 1px 1px 0 rgb(0 0 0 / 10%), inset 0 -1px 0 rgb(0 0 0 / 7%); */
-}
+/* .note-preview-container :hover {
+    box-shadow: 0 0 10px 0 black;
+} */
+
 
 .note-title {
     font-weight: bold;
@@ -49,6 +50,8 @@
     width: 100%;
     justify-content: flex-start;
     border-radius: 10px;
+    opacity: 0.95;
+
 }
 
 .note-text,

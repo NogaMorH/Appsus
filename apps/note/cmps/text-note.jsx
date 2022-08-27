@@ -18,9 +18,9 @@ export class TextNote extends React.Component {
             }
         }
 
-        console.log("updateNode", newNote)
+        // console.log("updateNode", newNote)
         this.props.onUpdateNote(newNote)
-        this.onToggleEditMode()
+        // this.onToggleEditMode()
     }
 
 
@@ -34,8 +34,7 @@ export class TextNote extends React.Component {
             </div> */}
             <div className="note-text">
                 <p contentEditable={true} suppressContentEditableWarning={true} 
-                onBlur={onUpdateNewNote}
-                 className="note-text">{text}</p>
+                onBlur={onUpdateNewNote}>{text}</p>
             </div>
         </article>)
     }
