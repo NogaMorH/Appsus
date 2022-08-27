@@ -1,10 +1,9 @@
 export class TextNote extends React.Component {
 
-    state = {
-        text: this.props.note.info.text,
-        title: this.props.note.info.title,
-        // editMode: false
-    }
+    // state = {
+    //     text: this.props.note.info.text,
+    //     title: this.props.note.info.title,
+    // }
 
 
     onUpdateNewNote = (ev) => {
@@ -18,14 +17,13 @@ export class TextNote extends React.Component {
             }
         }
 
-        // console.log("updateNode", newNote)
         this.props.onUpdateNote(newNote)
-        // this.onToggleEditMode()
+        // console.log("updateNode", newNote)
     }
 
 
     render() {
-        const { text, title } = this.state
+        const { text, title } = this.props.note.info
         const { onUpdateNewNote} = this
 
         return (<article className="flex note-text">

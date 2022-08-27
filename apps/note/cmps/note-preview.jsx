@@ -2,8 +2,7 @@ import { TextNote } from "./text-note.jsx"
 import { ImageNote } from "./image-note.jsx"
 import { VideoNote } from "./video-note.jsx"
 import { AddNote } from "./add-note.jsx"
-import { eventBusService } from "../../../services/event-bus.service.js"
-const { Link, Route } = ReactRouterDOM
+import { NoteButtons } from "./note-buttons.jsx"
 
 export class NotePreview extends React.Component {
 
@@ -29,14 +28,12 @@ export class NotePreview extends React.Component {
                 return <VideoNote {...props} />
 
         }
-
     }
 
     onSelectedNote = () => {
         const { id } = this.props.note
         this.setState({ isSelected: true }, () => this.props.setSelectedNote(id))
     }
-
 
     render() {
         const { note, onRemoveNote, onAddNote, setSelectedNote, onUpdateNote } = this.props
@@ -47,6 +44,8 @@ export class NotePreview extends React.Component {
             <div>
                 <button className="btn control-btn-remove" onClick={() => onRemoveNote(note.id)}><img src="../../../assets/img/trash.png" alt="delete email" /></button>
             </div>
+
+            <NoteButtons />
         </article>
     }
 }
