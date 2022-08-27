@@ -37,7 +37,8 @@ export class NotePreview extends React.Component {
     
     render() {
         const {backgroundColor} = this.props.note.style
-        const { note, onRemoveNote, onAddNote, setSelectedNote, onUpdateNote, onSetNoteBgColor={onSetNoteBgColor} } = this.props
+        const { note, onRemoveNote, onUpdateNote, onSetNoteBgColor } = this.props
+
         // console.log('backgroundColor:', backgroundColor)
         const { DynamicCmp } = this
 

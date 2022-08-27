@@ -96,7 +96,7 @@ const gNotes = [
             text: 'https://css-tricks.com/snippets/css/a-guide-to-flexbox/'
         },
         style: {
-            backgroundColor: 'white'
+            backgroundColor: 'red'
         }
     },
     {
@@ -107,7 +107,7 @@ const gNotes = [
             title: 'Palau island'
         },
         style: {
-            backgroundColor: 'white'
+            backgroundColor: 'yellow'
         }
     },
     {
@@ -249,10 +249,7 @@ function getNoteById(noteId) {
 function setNoteBgColor(noteId, color) {
     const notes = _loadNotesFromStorage()
     const note = notes.find(note => noteId === note.id)
-    // console.log('note id from bg:', note)
     note.style.backgroundColor = color
-    // console.log('notes:', notes)
-    // console.log('note.style.backgroundColor:', note.style.backgroundColor)
     _saveNotesToStorage(notes)
 
 }
