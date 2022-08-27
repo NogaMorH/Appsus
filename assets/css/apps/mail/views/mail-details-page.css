@@ -54,6 +54,10 @@
     color: var(--clr9);
 }
 
+.mail-details .mail-body {
+    line-height: 1.5;
+}
+
 .mail-details .time {
     font-size: 0.875rem;
     margin-bottom: 20px;

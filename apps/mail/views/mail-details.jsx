@@ -90,7 +90,7 @@ export class MailDetails extends React.Component {
                         <span className="sender-address">{senderAddress}</span>
                     </div>
                     <div className="time">{this.setTimeForDisplay()}</div>
-                    <p>{body}</p>
+                    <p className="mail-body">{body}</p>
                 </div>
             </main>
             {composeOpened && <MailCompose closeCompose={this.closeCompose} />}
