@@ -53,4 +53,12 @@
     /* read mail preview bg color */
 
     --clr13: #f1f1f1;
+
+    /* Books */
+    --clr14: #e7eaf6; 
+    --clr15: #a2a8d3;
+    --clr16: #38598b; 
+    --clr17: #113f67; 
+    --clr18: #1d1d1d;
+
 }

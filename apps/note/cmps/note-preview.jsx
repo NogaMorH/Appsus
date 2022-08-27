@@ -38,7 +38,7 @@ export class NotePreview extends React.Component {
     render() {
         const {backgroundColor} = this.props.note.style
         const { note, onRemoveNote, onAddNote, setSelectedNote, onUpdateNote, onSetNoteBgColor={onSetNoteBgColor} } = this.props
-        console.log('backgroundColor:', backgroundColor)
+        // console.log('backgroundColor:', backgroundColor)
         const { DynamicCmp } = this
 
         return <article onClick={this.onSelectedNote} className={`flex note-preview ${backgroundColor}`}>
@@ -47,31 +47,3 @@ export class NotePreview extends React.Component {
         </article>
     }
 }
-
-
-
-// export function NotePreview({ note, onRemoveNote }) {
-//     // console.log('note:', note)
-//     const { text, url, title } = note.info
-//     return <article contentEditable={true} className="flex note-preview">
-//         <Link to={"/note/" + note.id}>
-//             <p>{text}</p>
-//             <h3>{title}</h3>
-//             <img src={url} />
-//         </Link>
-//         <div>
-//             <button className="btn" onClick={() => onRemoveNote(note.id)}>X</button>
-//         </div>
-
-//     </article>
-
-// onAddNote={onAddNote}
-
-
-{/* <Link to={"/note/" + note.id}> */ }
-
-{/* </Link>
-            <Route path={"/note/:noteId"} component={NoteEdit} /> */}
-{/* {this.state.isSelected ? <NoteEdit/> : <DynamicCmp note={note} /> } */ }
-
-{/* {this.state.isSelected && <AddNote />}  */ }

@@ -1,0 +1,11 @@
+.book-btns {
+    border: 1px solid white;
+    outline: 0;
+    box-shadow: 0 0 10px 0 white;
+    background: var(--clr16);
+    padding: 4px 20px;
+    font-size: 1.2rem;
+    border-radius: 10px;
+    color: var(--clr14);
+    margin-bottom: 10px;
+}

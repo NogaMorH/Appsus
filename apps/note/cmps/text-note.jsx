@@ -7,7 +7,7 @@ export class TextNote extends React.Component {
 
 
     onUpdateNewNote = (ev) => {
-        console.log('ev.target.innerText:', ev.target.innerText)
+        // console.log('ev.target.innerText:', ev.target.innerText)
         const newNote = {
             ...this.props.note,
             info: {

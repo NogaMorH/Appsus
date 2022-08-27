@@ -2,3 +2,26 @@
     margin-left: 25px;
     padding-right: 10px;
 }
+
+.book-editor-layout {
+    width: 100%;
+    height: 100%;
+}
+
+.book-main-layout {
+    max-width: 80%;
+    margin: auto;
+    margin-inline-start: 10px;
+    margin-inline-end: 10px;
+}
+
+
+.main-layout>*:not(.full) {
+    max-width: 100%;
+}
+
+
+
+
+
+
