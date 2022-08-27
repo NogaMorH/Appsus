@@ -2,6 +2,7 @@ import { bookService } from "../services/book.service.js";
 // import { BookIndex } from "../views/book-index.jsx";
 import { utilService } from "../../../services/util.service.js"
 import { ReviewAdd } from "../cmps/review-add.jsx";
+import { eventBusService } from "../../../services/event-bus.service.js"
 const { Link } = ReactRouterDOM
 
 export class BookDetails extends React.Component {
@@ -13,10 +14,12 @@ export class BookDetails extends React.Component {
 
     componentDidMount() {
         this.loadBook()
+        eventBusService.emit('open-page')
     }
 
-    componentDidUpdate(prevProps, prevState){
-        if (prevProps.match.params.bookId !== this.props.match.params.bookId){
+    componentDidUpdate(prevProps, prevState) {
+        eventBusService.emit('open-page')
+        if (prevProps.match.params.bookId !== this.props.match.params.bookId) {
             this.loadBook()
         }
     }
