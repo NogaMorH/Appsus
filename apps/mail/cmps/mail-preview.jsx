@@ -38,16 +38,6 @@ export class MailPreview extends React.Component {
         return (this.state.isSelected) ? 'selected' : ''
     }
 
-    // onOpenMail = () => {
-    //     const { id } = this.props.mail
-    //     if (this.state.isRead) return
-    //     console.log('open mail')
-    //     this.setState({ isRead: true }, () => {
-    //         console.log('id from set state:', id)
-    //         this.props.onMailRead(id)
-    //     })
-    // }
-
     render() {
         const { subject, from, body, id } = this.props.mail
         const { senderName } = from

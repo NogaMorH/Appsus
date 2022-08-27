@@ -35,7 +35,7 @@ const gNotes = [
             title: 'Bobi and Me'
         },
         style: {
-            backgroundColor: 'white'
+            backgroundColor: 'blue'
         }
     },
     // {
@@ -60,7 +60,7 @@ const gNotes = [
             title: 'Fleet Foxes - Mykonos'
         },
         style: {
-            backgroundColor: 'white'
+            backgroundColor: 'red1'
         }
     },
     {
@@ -68,7 +68,7 @@ const gNotes = [
         id: utilService.makeId(),
         type: 'video',
         info: {
-            url: "https://www.youtube.com/embed/v=wO0A0XcWy88",
+            url: "https://www.youtube.com/embed/TWcyIpul8OE",
             title: 'Fleet Foxes - Mykonos'
         },
         style: {
@@ -126,7 +126,7 @@ const gNotes = [
         id: utilService.makeId(),
         type: 'video',
         info: {
-            url: "https://www.youtube.com/embed/v=TWcyIpul8OE",
+            url: "https://www.youtube.com/embed/wO0A0XcWy88",
             title: 'Fleet Foxes - Mykonos'
         },
         style: {
@@ -137,7 +137,6 @@ const gNotes = [
 ]
 
 function query(filterBy) {
-    // console.log('filterBy:from query service', filterBy)
     let notes = _loadNotesFromStorage()
     if (!notes) {
         notes = gNotes
@@ -146,9 +145,7 @@ function query(filterBy) {
 
     if (filterBy) {
         let { text, type } = filterBy
-        // console.log('title:', title)
         notes = notes.filter(note => {
-            // console.log('note.info.title:', note.info.title)
             if (note.info.title) {
                 return note.info.title.toUpperCase().includes(text.toUpperCase())
             }
@@ -162,22 +159,18 @@ function query(filterBy) {
 }
 
 function remove(noteId) {
-    // console.log('noteId:', noteId)
     let notes = _loadNotesFromStorage()
-    // console.log('notes:', notes)
     notes = notes.filter(note => note.id !== noteId)
     _saveNotesToStorage(notes)
     return Promise.resolve()
 }
 
 function save(note) {
-    // console.log('note from save:', note)
     if (note.id) return updateNote(note)
     else return addNote(note)
 }
 
 function updateNote(noteToUpdate) {
-    // console.log('noteToUpdate:', noteToUpdate)
     let notes = _loadNotesFromStorage()
     notes = notes.map(note => note.id === noteToUpdate.id ? noteToUpdate : note)
     _saveNotesToStorage(notes)
@@ -187,14 +180,12 @@ function updateNote(noteToUpdate) {
 function addNote({ title, text, type, url }) {
     let notes = _loadNotesFromStorage()
     const note = createNote(title, text, type, url)
-    // console.log('note:', note)
     notes.unshift(note)
     _saveNotesToStorage(notes)
     return Promise.resolve({ ...note })
 }
 
 function createNote(title, text, type, url) {
-    // console.log('type from service!!!!!:', type)
     let newNote = {
         id: utilService.makeId(),
         type,
@@ -215,7 +206,6 @@ function createNote(title, text, type, url) {
 }
 
 function copyNote(note) {
-    // console.log('note from servive copynote:', note)
     const notes = _loadNotesFromStorage()
     const noteCopy = createNoteCopy(note)
     notes.unshift(noteCopy)
@@ -253,7 +243,6 @@ function setNoteBgColor(noteId, color) {
     _saveNotesToStorage(notes)
 
 }
-
 
 function _saveNotesToStorage(notes) {
     storageService.saveToStorage(STORAGE_KEY, notes)

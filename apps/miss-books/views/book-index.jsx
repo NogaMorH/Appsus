@@ -16,7 +16,6 @@ export class BookIndex extends React.Component {
     }
 
     componentDidMount() {
-        // console.log('this.props from book app:', this.props)
         this.loadBooks()
     }
 
@@ -26,7 +25,6 @@ export class BookIndex extends React.Component {
     }
 
     onSetFilter = (filterBy) => {
-        console.log('filterBy from car app:', filterBy)
         this.setState({ filterBy }, () => { this.loadBooks() }
         )
     }

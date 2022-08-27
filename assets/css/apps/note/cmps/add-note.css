@@ -1,4 +1,3 @@
-
 .main-content .input-container {
     display: flex;
     flex-direction: column;
@@ -30,7 +29,7 @@
     margin-left: 2px;
 }
 
-.display-note-container{
+.display-note-container {
     width: 60%;
 }
 
@@ -39,7 +38,7 @@ textarea:focus {
 }
 
 .add-note-form .btn-save {
-   position: absolute;
+    position: absolute;
     color: rgb(102, 102, 102);
     cursor: pointer;
     font-size: 1.3rem;
@@ -53,10 +52,23 @@ textarea:focus {
 .add-note-btns {
     display: flex;
     justify-content: end;
-    align-items: stretch;
-    
+
 }
 
+@media (max-width: 800px) {
+    .display-note-container {
+        width: 80%;
+    }
+}
 
+    @media (max-width: 480px) {
+        .display-note-container {
+            width: 80%;
 
+        }
 
+        .add-note-btns {
+            justify-content: center;
+
+        }
+    }

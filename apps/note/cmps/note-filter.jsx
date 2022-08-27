@@ -9,7 +9,6 @@ export class NoteFilter extends React.Component {
 
 
     handleChange = ({ target }) => {
-        // console.log('target:', target)
         const field = target.name
         const value = target.value
         this.setState((prevState) => ({

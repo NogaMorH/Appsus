@@ -12,3 +12,17 @@
     width: 35%;
     margin-right: 10px;
 }
+
+@media (max-width: 800px){
+    .note-filter {
+        width: 60%;
+        margin-top: 10px;
+    }
+}
+
+@media (max-width: 480px){
+    .note-filter {
+        width: 60%;
+        margin-top: 10px;
+    }
+}

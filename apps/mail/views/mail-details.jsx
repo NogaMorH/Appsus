@@ -11,8 +11,11 @@ export class MailDetails extends React.Component {
     }
 
     componentDidMount() {
+<<<<<<< HEAD
         this.onCloseMenu()
         console.log('this:', this)
+=======
+>>>>>>> 7cc281af2e76eb44b3de11ca7b735276011def96
         this.loadMail()
         eventBusService.emit('open-page')
     }

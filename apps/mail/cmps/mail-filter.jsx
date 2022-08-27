@@ -8,8 +8,6 @@ export class MailFilter extends React.Component {
     onHandleChange = ({ target }) => {
         const field = target.name
         const value = target.value
-        console.log('field:', field)
-        console.log('value:', value)
         this.setState((prevState) => ({
             filterBy: {
                 ...prevState.filterBy,
@@ -17,7 +15,6 @@ export class MailFilter extends React.Component {
             }
         }), () => {
             const { filterBy } = this.state
-            // console.log('filterBy from mail filter:', filterBy)
             this.props.onSetFilter(filterBy)
         })
     }

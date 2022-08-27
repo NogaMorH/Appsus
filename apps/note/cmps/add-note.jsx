@@ -22,7 +22,6 @@ export class AddNote extends React.Component {
     // }
 
     loadNote = () => {
-        // console.log('this.props:', this.props)
         if (!this.props.match) return
         const { noteId } = this.props.match.params
         noteService.getNoteById(noteId)
@@ -31,7 +30,6 @@ export class AddNote extends React.Component {
                 this.setState({ note })
             })
     }
-
 
     handleChange = ({ target }) => {
         const field = target.name
@@ -55,16 +53,13 @@ export class AddNote extends React.Component {
         this.props.history.push('/note')
     }
 
-
     render() {
         const { note } = this.state
         const { handleChange, onSaveNote } = this
         const { title, text } = note
-        // console.log('note.info:', note.info)
         return <section className="display-note-container">
             <form onSubmit={onSaveNote} className="add-note-form">
 
-               
                     <textarea
                         name="text"
                         id="text"
@@ -80,10 +75,6 @@ export class AddNote extends React.Component {
              
             </form>
         </section >
-
-
-
-
 
     }
 }

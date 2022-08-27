@@ -30,7 +30,6 @@ function query(filterBy) {
     }
 
     if (filterBy) {
-        console.log('filterBy from service:', filterBy)
         let { title, price } = filterBy
         if (!price) price = Infinity
         if (!title) title = ''
@@ -42,9 +41,6 @@ function query(filterBy) {
     return Promise.resolve(books)
 }
 
-
-
-// getBooksFromGoogle('Harry Potter')
 function getBooksFromGoogle(bookName) {
     if (!gGoogleBooksCache || gGoogleBooksCache.length === 0) {
         return axios.get(`https:www.googleapis.com/books/v1/volumes?printType=books&q=${bookName}`)
@@ -88,7 +84,6 @@ function getNextBookId(bookId) {
     let books = _loadFromStorage()
     const bookIdx = books.findIndex(book => book.id === bookId)
     const nextBookIdx = bookIdx + 1 === books.length ? 0 : bookIdx + 1
-    // console.log('nextBookIdx:', nextBookIdx)
     return books[nextBookIdx].id
 }
 
@@ -96,7 +91,6 @@ function getPrevBookId(bookId) {
     let books = _loadFromStorage()
     const bookIdx = books.findIndex(book => book.id === bookId)
     const prevBookIdx = bookIdx - 1 < 0 ? books.length - 1 : bookIdx - 1
-    console.log('prevBookIdx:', prevBookIdx)
     return books[prevBookIdx].id
 
 
@@ -123,14 +117,11 @@ function remove(bookId) {
 }
 
 function saveReview(bookId, review) {
-    console.log('bookId:', bookId)
-    console.log('review:', review)
     let books = _loadFromStorage()
     const bookIdx = books.findIndex(book => book.id === bookId)
     if (books[bookIdx].reviews) books[bookIdx].reviews.unshift(review)
     else {
         books[bookIdx].reviews = [review]
-        // books[bookIdx].reviews.push(review)
     }
     _saveToStorage(books)
     return Promise.resolve()

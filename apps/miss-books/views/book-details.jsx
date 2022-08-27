@@ -23,7 +23,6 @@ export class BookDetails extends React.Component {
     }
 
     loadBook = () => {
-        console.log('this.props:', this.props)
         const { bookId } = this.props.match.params
         bookService.getBookById(bookId)
             .then((book) => {
@@ -49,8 +48,6 @@ export class BookDetails extends React.Component {
 
     setPublishClass = () => {
         const currYear = new Date().getFullYear()
-        // console.log('date:', currYear)
-        // console.log('book.publishedDate:', this.state.book.publishedDate)
         if ((currYear - this.state.book.publishedDate) >= 10) return 'Veteran book'
         else if (currYear - this.state.book.publishedDate <= 1) return 'New book'
     }

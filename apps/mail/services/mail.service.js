@@ -171,13 +171,10 @@ function query(filterBy) {
     }
 
     if (filterBy) {
-        // console.log('filterBy from service:', filterBy)
         let { text } = filterBy
-        // console.log('text:', text)
         mails = mails.filter(mail => {
             const { subject, body, from } = mail
             const { senderName, senderAddress } = from
-            console.log('subject from service', subject)
             if (subject && subject.toUpperCase().includes(text.toUpperCase())) return true
             else if (body && body.toUpperCase().includes(text.toUpperCase())) return true
             else return senderName.toUpperCase().includes(text.toUpperCase()) ||
