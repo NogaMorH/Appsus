@@ -17,6 +17,11 @@ export class NoteIndex extends React.Component {
 
     componentDidMount() {
         this.loadNotes()
+        eventBusService.emit('open-page')
+    }
+
+    componentDidUpdate() {
+        eventBusService.emit('open-page')
     }
 
     loadNotes = () => {
@@ -37,7 +42,7 @@ export class NoteIndex extends React.Component {
     setSelectedNote = (noteId) => {
         noteService.getNoteById(noteId)
             .then(note => this.setState({ ...this.state, selectedNote: note }, () => {
-            console.log('noteId:', noteId)
+                console.log('noteId:', noteId)
             }))
     }
 
@@ -60,11 +65,11 @@ export class NoteIndex extends React.Component {
 
     }
 
-    onSetNoteBgColor = (noteId,color) => {
-        noteService.setNoteBgColor(noteId,color)
+    onSetNoteBgColor = (noteId, color) => {
+        noteService.setNoteBgColor(noteId, color)
             .then
-    }   
-    
+    }
+
 
     render() {
         const { notes } = this.state
@@ -80,7 +85,7 @@ export class NoteIndex extends React.Component {
                         <AddNote saveNote={this.onUpdateNote} />
                         <NoteFilter onSetFilter={onSetFilter} />
                     </div>
-                    <NoteList notes={this.state.notes} onRemoveNote={onRemoveNote} setSelectedNote={setSelectedNote} onUpdateNote={onUpdateNote}/>
+                    <NoteList notes={this.state.notes} onRemoveNote={onRemoveNote} setSelectedNote={setSelectedNote} onUpdateNote={onUpdateNote} />
                 </main>
             </section>
 

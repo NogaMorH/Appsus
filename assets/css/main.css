@@ -15,6 +15,10 @@
 @import './cmps/user-msg.css';
 @import './cmps/app-header.css';
 @import './cmps/app-nav-modal.css';
+@import './cmps/home-hero.css';
+@import './cmps/home-apps.css';
+@import './cmps/about-hero.css';
+@import './cmps/about-us.css';
 
 /* Apps */
 /* Mail views */

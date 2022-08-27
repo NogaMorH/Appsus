@@ -3,6 +3,7 @@ import { MailList } from "../cmps/mail-list.jsx"
 import { MailSideNav } from "../cmps/mail-side-nav.jsx"
 import { MailCompose } from "../cmps/mail-compose.jsx"
 import { MailFilter } from "../cmps/mail-filter.jsx"
+import { eventBusService } from "../../../services/event-bus.service.js"
 
 export class MailIndex extends React.Component {
 
@@ -14,6 +15,11 @@ export class MailIndex extends React.Component {
 
     componentDidMount() {
         this.loadMails()
+        eventBusService.emit('open-page')
+    }
+
+    componentDidUpdate() {
+        eventBusService.emit('open-page')
     }
 
     loadMails() {

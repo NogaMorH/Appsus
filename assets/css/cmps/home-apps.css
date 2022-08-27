@@ -1,0 +1,51 @@
+.home-apps {
+    height: 40%;
+    width: 70%;
+    margin: auto;
+    justify-content: space-between;
+}
+
+.home-apps img {
+width: 100px;    
+}
+
+.home-apps .app {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 250px;
+    text-align: center;
+}
+
+.home-apps .app-title {
+    font-family: product-sans-bold, sans-serif;
+    font-size: 1.2rem;
+    margin-bottom: 5px
+}
+
+.home-apps .app-introduction {
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+.home-apps .get-started-btn {
+    padding: 7px;
+    border-radius: 20px;
+    box-shadow: #53535375 -2px 3px 7px 0px;
+}
+
+.home-apps .get-started-btn:hover {
+    opacity: .9;
+}
+
+.home-apps .get-started-btn.keep {
+    background-color: #e4e4f9;
+}
+
+.home-apps .get-started-btn.mail {
+    background-color: #f9dbd2;
+}
+
+.home-apps .get-started-btn.book {
+    background-color: #e6edb7;
+}

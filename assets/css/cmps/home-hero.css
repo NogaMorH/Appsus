@@ -1,0 +1,19 @@
+.home-hero {
+    height: 60%;
+    background-image: url("../../img/home-background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 25px;
+}
+
+.home-hero .hero-title {
+    margin-bottom: 40px;
+    font-size: 2.7rem;
+}
+
+.home-hero .hero-text {
+    font-size: 1.5rem;
+}

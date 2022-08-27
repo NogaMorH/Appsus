@@ -28,6 +28,7 @@
 .app-header .menu-btn {
     width: 40px;
     transition: opacity .2s;
+    margin-right: 7px;
 }
 
 .app-header .menu-btn:hover {

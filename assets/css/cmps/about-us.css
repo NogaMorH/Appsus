@@ -1,0 +1,29 @@
+.about-us {
+        /* height: 40%; */
+        justify-content: center;
+}
+
+.about-us .us {
+        text-align: center;
+        font-size: 1.2rem;
+        font-family: product-sans-bold, sans-serif;
+}
+
+.about-us .kfir {
+        margin-right: 50px;
+}
+
+.about-us .noga {
+        margin-left: 50px;
+}
+
+.about-us img {
+        height: 300px;
+        width: auto;
+        border-radius: 7px;
+        outline: 2px solid var(--clr11);
+}
+
+.about-us .name {
+        margin-bottom: 15px;
+}

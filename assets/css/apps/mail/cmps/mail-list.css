@@ -1,5 +1,7 @@
 .mail-list-container {
     padding-left: 0;
+    margin-left: 0;
+    padding-right: 0;
 }
 
 .mail-list-container .mail-control-btn {

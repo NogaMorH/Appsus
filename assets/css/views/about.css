@@ -1,0 +1,10 @@
+.about {
+    flex-grow: 1;    
+    color: var(--clr9);
+    display: flex;
+    flex-direction: column;
+    font-family: product-sans-regular, sans-serif;
+}
+
+
+

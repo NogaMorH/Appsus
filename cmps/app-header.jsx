@@ -1,10 +1,18 @@
 import { AppNavModal } from "./app-nav-modal.jsx"
+import { eventBusService } from "../services/event-bus.service.js"
 
 const { Link, withRouter } = ReactRouterDOM
 export class _AppHeader extends React.Component {
 
     state = {
         menuOpened: false
+    }
+
+    componentDidMount() {
+        eventBusService.on('open-page', () => {
+            console.log('menu opened false')
+            this.setState({ menuOpened: false })
+        })
     }
 
     onToggleMenu = () => {

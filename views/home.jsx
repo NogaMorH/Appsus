@@ -1,7 +1,21 @@
+import { HomeHero } from "../cmps/home-hero.jsx"
+import { HomeApps } from "../cmps/home-apps.jsx"
+import { eventBusService } from "../services/event-bus.service.js"
 
-export function Home() {
+export class Home extends React.Component {
 
-    return <section className="home">
-        <h1>Welcome to home page!</h1>
-    </section>
+    componentDidMount() {
+        eventBusService.emit('open-page')
+    }
+
+    componentDidUpdate() {
+        eventBusService.emit('open-page')
+    }
+
+    render() {
+        return <section className="home">
+            <HomeHero />
+            <HomeApps />
+        </section>
+    }
 }

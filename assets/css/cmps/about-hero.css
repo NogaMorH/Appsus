@@ -1,0 +1,23 @@
+.about-hero-container {
+    height: 40%;
+    background-image: url("../../img/about-background.webp");
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-bottom: 25px;
+}
+
+.about-hero {
+    justify-content: center;
+    flex-direction: column;
+    height: 100%;
+}
+
+.about-hero .about-hero-title {
+    margin-bottom: 40px;
+    font-size: 2.6rem;
+}
+
+.about-hero .about-hero-text {
+    font-size: 1.4rem;
+    line-height: 1.5;
+}

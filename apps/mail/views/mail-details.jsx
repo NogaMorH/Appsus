@@ -1,5 +1,6 @@
 import { mailService } from "../services/mail.service.js"
 import { MailSideNav } from "../cmps/mail-side-nav.jsx"
+import { eventBusService } from "../../../services/event-bus.service.js"
 
 export class MailDetails extends React.Component {
 
@@ -10,6 +11,11 @@ export class MailDetails extends React.Component {
     componentDidMount() {
         console.log('this:', this)
         this.loadMail()
+        eventBusService.emit('open-page')
+    }
+
+    componentDidUpdate() {
+        eventBusService.emit('open-page')
     }
 
     componentDidUpdate(prevProps) {
