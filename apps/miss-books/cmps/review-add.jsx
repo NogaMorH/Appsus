@@ -31,10 +31,8 @@ export class ReviewAdd extends React.Component {
     }
 
     onSubmit = (ev) => {
-        // console.log('ev:', ev)
         ev.preventDefault()
         const { bookId, loadBook } = this.props
-        // console.log('bookId:', bookId)
         const { review } = this.state
         bookService.saveReview(bookId, review)
             .then(() => {
@@ -59,10 +57,8 @@ export class ReviewAdd extends React.Component {
 
     render() {
 
-        // console.log('this.props:', this.props)
         const { reviews } = this.props
         const { fullName, rate, text, date } = this.state
-        // console.log('date:', date)
         return <section className="review-add">
             <h3>Write a Review!</h3>
 
@@ -129,22 +125,3 @@ export class ReviewAdd extends React.Component {
     }
 }
 
-
-
-//     {reviews && <section className="reviews">
-//                 <h3>Recent Reviews</h3>
-//                 {reviews.map(review =>
-//                     <section key={review.fullName} className="review">
-//                         <h3>{review.fullName} / {review.date}</h3>
-//                         <h3>Rate: {review.rate}</h3>
-//                         <p>{review.text}</p>
-//                         <button className="btn btn-close" onClick={() => this.onRemoveReview(review.fullName)}>X</button>
-//                     </section>
-
-//                 )}
-
-//             </section>
-            
-//          </section>
-//     }
-// }

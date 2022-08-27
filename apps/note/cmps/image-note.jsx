@@ -1,6 +1,5 @@
 export class ImageNote extends React.Component {
     render() {
-        // console.log('props: from image note', this.props)
         const { title, url } = this.props.note.info
 
         return <article className="flex note-image">

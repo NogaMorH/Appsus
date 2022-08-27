@@ -46,13 +46,9 @@ export class MailIndex extends React.Component {
     }
 
     onSetFilter = (filterBy) => {
-        // console.log('filterBy from mail index:', filterBy)
         this.setState({ filterBy }, this.loadMails)
     }
 
-    // onMailRead = (mailId) => {
-    //     console.log('mailId:', mailId)
-    // }
 
     render() {
         const { mails, composeOpened } = this.state

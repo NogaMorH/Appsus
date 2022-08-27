@@ -20,7 +20,7 @@
     }
 }
 
-@media (max-width: 460px){
+@media (max-width: 480px){
     .note-filter {
         width: 60%;
         margin-top: 10px;

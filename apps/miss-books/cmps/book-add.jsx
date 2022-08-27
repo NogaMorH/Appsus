@@ -11,7 +11,6 @@ export class AddBook extends React.Component {
         ev.preventDefault()
         googleBookService.getBooksFromGoogle()
             .then((res) => res)
-            console.log('res:', res)
     }
 
     handleChange = (ev) => {

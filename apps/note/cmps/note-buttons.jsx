@@ -7,7 +7,6 @@ export class NoteButtons extends React.Component {
 
     setNoteBgColor = (color) => {
         const { id } = this.props.note
-        // console.log('this.props.onSetBgColor:', this.props.onSetBgColor)
         this.props.onSetNoteBgColor(id, color)
 
     }

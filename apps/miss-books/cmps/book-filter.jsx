@@ -10,8 +10,6 @@ export class BookFilter extends React.Component {
     inputRef = React.createRef()
 
     handleChange = ({ target }) => {
-        // console.log('target.name:', target.name)
-        // console.log('target.value:', target.value)
         const field = target.name
         const value = target.type === 'number' ? +target.value : target.value
         this.setState((prevState) => ({
@@ -25,7 +23,6 @@ export class BookFilter extends React.Component {
     }
 
     onFilter = (ev) => {
-        // console.log('hi:')
         ev.preventDefault()
         this.props.onSetFilter(this.state.filterBy)
     }
@@ -35,7 +32,6 @@ export class BookFilter extends React.Component {
     }
 
     render() {
-        // console.log('this.props:', this.props)
         const { title, price } = this.state.filterBy
         return <section className="book-filter flex main-layout">
             <form onSubmit={this.onFilter}>

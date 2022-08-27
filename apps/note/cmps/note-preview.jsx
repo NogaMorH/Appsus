@@ -18,7 +18,6 @@ export class NotePreview extends React.Component {
 
 
     DynamicCmp = (props) => {
-        // console.log('props: from dynamic', props)
         switch (this.state.noteType) {
             case 'text':
                 return <TextNote {...props} />
@@ -39,7 +38,6 @@ export class NotePreview extends React.Component {
         const {backgroundColor} = this.props.note.style
         const { note, onRemoveNote, onUpdateNote, onSetNoteBgColor } = this.props
 
-        // console.log('backgroundColor:', backgroundColor)
         const { DynamicCmp } = this
 
         return <article onClick={this.onSelectedNote} className={`flex note-preview ${backgroundColor}`}>

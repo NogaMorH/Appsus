@@ -61,7 +61,7 @@ textarea:focus {
     }
 }
 
-    @media (max-width: 460px) {
+    @media (max-width: 480px) {
         .display-note-container {
             width: 80%;
 

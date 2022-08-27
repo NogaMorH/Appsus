@@ -10,7 +10,6 @@ export class _AppHeader extends React.Component {
 
     componentDidMount() {
         eventBusService.on('open-page', () => {
-            // console.log('menu opened false')
             this.setState({ menuOpened: false })
         })
     }

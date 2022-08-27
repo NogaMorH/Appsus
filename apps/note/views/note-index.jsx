@@ -4,6 +4,8 @@ import { NoteSideNav } from "../cmps/note-side-nav.jsx"
 import { AddNote } from '../cmps/add-note.jsx'
 import { NoteFilter } from '../cmps/note-filter.jsx'
 import { eventBusService } from "../../../services/event-bus.service.js"
+import { showErrorMsg, showSuccessMsg } from './../services/event-bus.service.js';
+
 const { Link, Route } = ReactRouterDOM
 
 
@@ -30,12 +32,10 @@ export class NoteIndex extends React.Component {
     }
 
     onRemoveNote = (noteId) => {
-        console.log('noteId:', noteId)
         noteService.remove(noteId)
             .then(() => {
                 const notes = this.state.notes.filter(note => note.id !== noteId)
-                this.setState({ notes }
-                )
+                this.setState({ notes })
             })
     }
 
@@ -46,14 +46,12 @@ export class NoteIndex extends React.Component {
             }))
     }
 
-
     onUpdateNote = (newNote) => {
 
         noteService.save(newNote)
             .then((note) => {
                 this.setState({ notes: [note, ...this.state.notes] })
             })
-
     }
 
     onSetFilter = (filterBy) => {
@@ -68,16 +66,13 @@ export class NoteIndex extends React.Component {
             this.loadNotes()
     }
 
-
     render() {
         const { notes } = this.state
         const { onRemoveNote, onSetFilter, setSelectedNote, onUpdateNote, onSetNoteBgColor } = this
         if (!notes) return <div>Loading...</div>
 
-        // console.log('LENGTH:', this.state.notes.length);
         return (
             <section className="flex note-index">
-                {/* <NoteSideNav /> */}
                 <main className="flex main-content ">
                     <div className="input-container">
                         <AddNote saveNote={this.onUpdateNote} />
