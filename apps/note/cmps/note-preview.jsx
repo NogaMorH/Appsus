@@ -34,18 +34,16 @@ export class NotePreview extends React.Component {
         const { id } = this.props.note
         this.setState({ isSelected: true }, () => this.props.setSelectedNote(id))
     }
-
+    
     render() {
-        const { note, onRemoveNote, onAddNote, setSelectedNote, onUpdateNote } = this.props
+        const {backgroundColor} = this.props.note.style
+        const { note, onRemoveNote, onAddNote, setSelectedNote, onUpdateNote, onSetNoteBgColor={onSetNoteBgColor} } = this.props
+        console.log('backgroundColor:', backgroundColor)
         const { DynamicCmp } = this
 
-        return <article onClick={this.onSelectedNote} className="flex note-preview">
-            <DynamicCmp note={note} onUpdateNote={onUpdateNote} />
-            <div>
-                <button className="btn control-btn-remove" onClick={() => onRemoveNote(note.id)}><img src="../../../assets/img/trash.png" alt="delete email" /></button>
-            </div>
-
-            <NoteButtons />
+        return <article onClick={this.onSelectedNote} className={`flex note-preview ${backgroundColor}`}>
+            <DynamicCmp note={note} onUpdateNote={onUpdateNote} onSetNoteBgColor={onSetNoteBgColor}  />
+            <NoteButtons onRemoveNote={onRemoveNote} note={note} onSetNoteBgColor={onSetNoteBgColor}  />
         </article>
     }
 }

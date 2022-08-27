@@ -1,0 +1,59 @@
+.note-btn {
+    width: 40px;
+    background-color: transparent;
+    border: none;
+}
+
+.note-buttons {
+    margin-top: 10px;
+}
+
+.color-btns-container{
+    background-color: var(--clr7) ;
+    border-radius: 10px;
+    padding: 3px;
+    margin-top: 3px;
+    position: relative;
+}
+
+.note-btn.save {
+    font-family: product-sans-regular, sans-serif;
+    position: absolute;
+    right: 30px;
+    bottom: 20px;
+}
+
+.color-btn {
+    border: none;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    border-radius: 50%;
+}
+
+.color-btn.yellow {
+    background-color: var(--clr8);
+}
+
+.color-btn.teal {
+    background-color: #a7ffeb;
+}
+
+.color-btn.red {
+    background-color: #f28b82;
+}
+
+.color-btn.green {
+    background-color: #ccfe90;
+}
+
+.color-btn.blue {
+    background-color: #cbf0f8;
+}
+
+.color-btn.pink {
+    background-color: #fccfe8;
+}

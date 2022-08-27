@@ -37,7 +37,7 @@ export class NoteIndex extends React.Component {
     setSelectedNote = (noteId) => {
         noteService.getNoteById(noteId)
             .then(note => this.setState({ ...this.state, selectedNote: note }, () => {
-            console.log('noteId:', noteId)
+                console.log('noteId:', noteId)
             }))
     }
 
@@ -60,15 +60,15 @@ export class NoteIndex extends React.Component {
 
     }
 
-    onSetNoteBgColor = (noteId,color) => {
-        noteService.setNoteBgColor(noteId,color)
-            .then
-    }   
-    
+    onSetNoteBgColor = (noteId, color) => {
+        noteService.setNoteBgColor(noteId, color)
+        this.loadNotes()
+    }
+
 
     render() {
         const { notes } = this.state
-        const { onRemoveNote, onSetFilter, setSelectedNote, onUpdateNote } = this
+        const { onRemoveNote, onSetFilter, setSelectedNote, onUpdateNote, onSetNoteBgColor } = this
         if (!notes) return <div>Loading...</div>
 
         // console.log('LENGTH:', this.state.notes.length);
@@ -80,7 +80,8 @@ export class NoteIndex extends React.Component {
                         <AddNote saveNote={this.onUpdateNote} />
                         <NoteFilter onSetFilter={onSetFilter} />
                     </div>
-                    <NoteList notes={this.state.notes} onRemoveNote={onRemoveNote} setSelectedNote={setSelectedNote} onUpdateNote={onUpdateNote}/>
+                    <NoteList notes={this.state.notes} onRemoveNote={onRemoveNote} setSelectedNote={setSelectedNote} onUpdateNote={onUpdateNote}
+                        onSetNoteBgColor={onSetNoteBgColor} />
                 </main>
             </section>
 

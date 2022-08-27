@@ -24,7 +24,7 @@ const gNotes = [
             text: 'Fullstack Me Baby!'
         },
         style: {
-            backgroundColor: 'white'
+            backgroundColor: 'teal'
         }
     },
     {
@@ -118,7 +118,7 @@ const gNotes = [
             title: 'Bobi and Me'
         },
         style: {
-            backgroundColor: 'white'
+            backgroundColor: 'yellow'
         }
     },
     {
@@ -243,12 +243,15 @@ function getNoteById(noteId) {
     return Promise.resolve(note)
 }
 
-function setNoteBgColor(noteId, color){
+function setNoteBgColor(noteId, color) {
     const notes = _loadNotesFromStorage()
-    notes.forEach(note => {
-    if (note.id === noteId) note.style.backgroundColor = color})
+    const note = notes.find(note => noteId === note.id)
+    console.log('note id from bg:', note)
+    note.style.backgroundColor = color
+    // console.log('notes:', notes)
+    // console.log('note.style.backgroundColor:', note.style.backgroundColor)
     _saveNotesToStorage(notes)
-    return Promise.resolve()
+
 }
 
 
