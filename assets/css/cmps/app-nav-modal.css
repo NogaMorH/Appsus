@@ -18,3 +18,19 @@
     flex-direction: column;
     text-align: center;
 }
+
+@media (max-width: 450px) {
+    .app-nav-modal {
+        flex-direction: column;
+        min-width: 200px;
+    }
+
+    .app-nav-modal .app-nav-link {
+        align-items: center;
+        padding-bottom: 10px;
+    }
+
+    .app-nav-modal .app-nav-link:not(:last-child) {
+        border-bottom: 1px solid lightgray;
+    }
+}

@@ -61,7 +61,6 @@
 
     .home-apps .app {
         flex-direction: column;
-        text-align: left;
         min-width: 100%;
         padding-bottom: 30px;
         border-bottom: 1px solid lightgray;
