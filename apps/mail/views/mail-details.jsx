@@ -11,11 +11,8 @@ export class MailDetails extends React.Component {
     }
 
     componentDidMount() {
-<<<<<<< HEAD
         this.onCloseMenu()
         console.log('this:', this)
-=======
->>>>>>> 7cc281af2e76eb44b3de11ca7b735276011def96
         this.loadMail()
         eventBusService.emit('open-page')
     }
@@ -63,6 +60,12 @@ export class MailDetails extends React.Component {
         return `${day}/${month}/${year}`
     }
 
+    onRemoveMail = () => {
+        console.log('remove mail details')
+        eventBusService.emit('remove-mail', this.state.mail.id)
+        this.onGoBack()
+    }
+
     render() {
         if (!this.state.mail) return <div></div>
         const { composeOpened } = this.state
@@ -74,6 +77,9 @@ export class MailDetails extends React.Component {
                 <div className="mail-details-btns">
                     <button onClick={this.onGoBack} className="btn mail-control-btn">
                         <img src="../../../assets/img/arrow.png" alt="Go back" />
+                    </button>
+                    <button onClick={this.onRemoveMail} className="btn mail-control-btn">
+                        <img src="../../../assets/img/trash.png" />
                     </button>
                 </div>
                 <div className="mail-content">

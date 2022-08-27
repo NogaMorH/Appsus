@@ -9,11 +9,11 @@
     margin-bottom: 10px;
 }
 
-.mail-list-container .mail-control-btn:hover {
+.mail-control-btn:hover {
     background-color: var(--clr13);
 }
 
-.mail-list-container .mail-control-btn img {
+.mail-control-btn img {
     width: 25px;
 }
 

@@ -14,6 +14,10 @@ export class MailIndex extends React.Component {
     }
 
     componentDidMount() {
+        eventBusService.on('remove-mail', (mailId) => {
+            console.log(mailId)
+            this.onRemoveMail([mailId])
+        })
         this.onCloseMenu()
         this.loadMails()
         eventBusService.emit('open-page')

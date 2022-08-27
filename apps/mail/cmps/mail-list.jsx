@@ -1,5 +1,6 @@
 import { mailService } from '../services/mail.service.js'
 import { MailPreview } from './mail-preview.jsx'
+import { eventBusService } from '../../../services/event-bus.service.js'
 
 export class MailList extends React.Component {
 
