@@ -1,12 +1,16 @@
-.home-hero {
+.home-hero-container {
     height: 60%;
     background-image: url("../../img/home-background.jpg");
     background-repeat: no-repeat;
     background-size: cover;
+    margin-bottom: 25px;
+}
+
+.home-hero {
     text-align: center;
     flex-direction: column;
     justify-content: center;
-    margin-bottom: 25px;
+    height: 100%;
 }
 
 .home-hero .hero-title {
@@ -16,4 +20,19 @@
 
 .home-hero .hero-text {
     font-size: 1.5rem;
+    line-height: 1.4;
+}
+
+@media (max-width: 450px) {
+    .home-hero-container {
+        height: 40%;
+    }
+
+    .home-hero .hero-title {
+        font-size: 2.1rem;
+    }
+
+    .home-hero .hero-text {
+        font-size: 1.2rem;
+    }
 }

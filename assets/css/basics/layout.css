@@ -15,18 +15,33 @@
     margin-inline-end: 10px;
 }
 
-
 .main-layout>*:not(.full) {
     max-width: 100%;
 }
 
-
-
-
-
-
-
-
 .about-layout {
     padding: 30px;
+}
+
+.home-layout {
+    width: 800px;
+    margin: 0 auto;
+}
+
+@media (max-width: 860px) {
+    .home-layout {
+        width: 600px;
+    }
+}
+
+@media (max-width: 670px) {
+    .home-layout {
+        width: 400px;
+    }
+}
+
+@media (max-width: 450px) {
+    .home-layout {
+        width: 90%;
+    }
 }

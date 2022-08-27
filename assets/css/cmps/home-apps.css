@@ -1,12 +1,13 @@
 .home-apps {
     height: 40%;
-    width: 70%;
     margin: auto;
     justify-content: space-between;
+    align-items: flex-end;
+    padding-bottom: 60px;
 }
 
 .home-apps img {
-width: 100px;    
+    width: 100px;
 }
 
 .home-apps .app {
@@ -48,4 +49,22 @@ width: 100px;
 
 .home-apps .get-started-btn.book {
     background-color: #e6edb7;
+}
+
+@media (max-width: 450px) {
+    .home-apps {
+        padding-bottom: 20px;
+        height: initial;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .home-apps .app {
+        flex-direction: column;
+        text-align: left;
+        min-width: 100%;
+        padding-bottom: 30px;
+        border-bottom: 1px solid lightgray;
+        margin-bottom: 10px;
+    }
 }
