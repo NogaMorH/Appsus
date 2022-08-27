@@ -1,7 +1,7 @@
 .mail-compose {
     position: absolute;
     bottom: 0;
-    right: 0;
+    right: 10%;
     height: 610px;
     grid-template-rows: 35px 1fr;
     box-shadow: -2px 0px 7px 0 #0f0f0f52;

@@ -27,4 +27,9 @@
 
 .app-header .menu-btn {
     width: 40px;
+    transition: opacity .2s;
+}
+
+.app-header .menu-btn:hover {
+    opacity: .8;
 }
