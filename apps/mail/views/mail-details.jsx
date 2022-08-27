@@ -66,6 +66,7 @@ export class MailDetails extends React.Component {
         this.onGoBack()
     }
 
+
     render() {
         if (!this.state.mail) return <div></div>
         const { composeOpened } = this.state
