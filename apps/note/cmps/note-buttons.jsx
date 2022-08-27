@@ -7,6 +7,7 @@ export class NoteButtons extends React.Component {
 
     setNoteBgColor = (color) => {
         const { id } = this.props.note
+        // console.log('this.props.onSetBgColor:', this.props.onSetBgColor)
         this.props.onSetNoteBgColor(id, color)
 
     }
@@ -20,7 +21,6 @@ export class NoteButtons extends React.Component {
     render() {
         const { colorPalleteOpen } = this.state
         const { onRemoveNote, note } = this.props
-        const {backgroundColor} = this.props.note.style
         const { toggleBgColorPallete, onUpdateNoteBgColor } = this
         return <section className="note-buttons">
             <button onClick={toggleBgColorPallete} className="btn note-btn"><img src="../../../assets/img/color-pallete.png" alt="color-pallete-button" /></button>
@@ -31,8 +31,8 @@ export class NoteButtons extends React.Component {
                 {colorPalleteOpen && <div className="color-btns-container">
                     <button className="color-btn yellow"  onClick={() => { this.setNoteBgColor('yellow') }}></button>
                     <button className="color-btn teal" onClick={() => { this.setNoteBgColor('teal') }}></button>
-                    <button className="color-btn red" onClick={() => { this.setNoteBgColor('red') }}></button>
-                    <button className="color-btn green" onClick={() => { this.setNoteBgColor('green') }}></button>
+                    <button className="color-btn red" onClick={() => { this.setNoteBgColor('red1') }}></button>
+                    <button className="color-btn white" onClick={() => { this.setNoteBgColor('white') }}></button>
                     <button className="color-btn blue" onClick={() => { this.setNoteBgColor('blue') }}></button>
                     <button className="color-btn pink" onClick={() => { this.setNoteBgColor('pink') }}></button>
 

@@ -14,6 +14,8 @@
     padding: 3px;
     margin-top: 3px;
     position: relative;
+    display: flex;
+    justify-content: center;
 }
 
 .note-btn.save {
@@ -32,6 +34,7 @@
     font-size: 16px;
     margin: 4px 2px;
     border-radius: 50%;
+    border: 0.6px solid var(--clr11);
 }
 
 .color-btn.yellow {
@@ -46,8 +49,8 @@
     background-color: #f28b82;
 }
 
-.color-btn.green {
-    background-color: #ccfe90;
+.color-btn.white {
+    background-color: #fafafa;
 }
 
 .color-btn.blue {
