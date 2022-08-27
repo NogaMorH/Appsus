@@ -77,10 +77,10 @@ export class MailDetails extends React.Component {
             <main className="flex mail-details">
                 <div className="mail-details-btns">
                     <button onClick={this.onGoBack} className="btn mail-control-btn">
-                        <img src="../../../assets/img/arrow.png" alt="Go back" />
+                        <img src="./../../assets/img/arrow.png" alt="Go back" />
                     </button>
                     <button onClick={this.onRemoveMail} className="btn mail-control-btn">
-                        <img src="../../../assets/img/trash.png" />
+                        <img src="./../../assets/img/trash.png" />
                     </button>
                 </div>
                 <div className="mail-content">

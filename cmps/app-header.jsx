@@ -22,10 +22,10 @@ export class _AppHeader extends React.Component {
         return <header className="app-header-container">
             <div className="main-layout flex align-center app-header">
                 <Link to="/" className="flex align-center logo">
-                    <img src="../assets/img/logo.png" className="logo-img" alt="logo" />
+                    <img src="./assets/img/logo.png" className="logo-img" alt="logo" />
                     <h3 className="logo-text">Appsus</h3>
                 </Link>
-                <img src="../assets/img/grid.png" alt="open menu" className="btn menu-btn"
+                <img src="./assets/img/grid.png" alt="open menu" className="btn menu-btn"
                     onClick={this.onToggleMenu} />
                 {(this.state.menuOpened) && <AppNavModal onToggleMenu={this.onToggleMenu} />}
             </div>

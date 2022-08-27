@@ -8,7 +8,7 @@ export function HomeApps() {
                 {/* <br /> */}
             </div>
             <Link to="/note">
-                <img src="../assets/img/note.png" />
+                <img src="./assets/img/note.png" />
             </Link>
             <div className="app-title">keep</div>
             <Link to="/note" className="btn get-started-btn keep">
@@ -21,7 +21,7 @@ export function HomeApps() {
                 {/* <br /> */}
             </div>
             <Link to="/mail">
-                <img src="../assets/img/mail.png" />
+                <img src="./assets/img/mail.png" />
             </Link>
             <div className="app-title">Mail</div>
             <Link to="/mail" className="btn get-started-btn mail">
@@ -35,7 +35,7 @@ export function HomeApps() {
 
             </div>
             <Link to="/book">
-                <img src="../assets/img/book.png" />
+                <img src="./assets/img/book.png" />
             </Link>
             <div className="app-title">Books</div>
             <Link to="/book" className="btn get-started-btn book">
