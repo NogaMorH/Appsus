@@ -4,7 +4,6 @@ import { utilService } from "../../../services/util.service.js"
 import { ReviewAdd } from "../cmps/review-add.jsx";
 const { Link } = ReactRouterDOM
 
-
 export class BookDetails extends React.Component {
 
     state = {

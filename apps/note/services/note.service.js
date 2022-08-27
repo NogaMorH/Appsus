@@ -69,7 +69,7 @@ const gNotes = [
         type: 'video',
         info: {
             url: "https://www.youtube.com/embed/TWcyIpul8OE",
-            title: 'Fleet Foxes - Mykonos'
+            title: 'Bon Iver - Holocene'
         },
         style: {
             backgroundColor: 'white'
@@ -127,7 +127,7 @@ const gNotes = [
         type: 'video',
         info: {
             url: "https://www.youtube.com/embed/wO0A0XcWy88",
-            title: 'Fleet Foxes - Mykonos'
+            title: 'Peter Schilling - Major Tom'
         },
         style: {
             backgroundColor: 'white'
