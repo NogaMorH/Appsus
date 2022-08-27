@@ -46,8 +46,9 @@ export class AddNote extends React.Component {
 
     onSaveNote = (ev) => {
         ev.preventDefault()
-    this.props.saveNote(this.state.note)
-   
+        this.props.saveNote(this.state.note)
+        this.setState({note: {text: '', title:'', type:'text', isPinned: false}})
+
     }
 
     onGoBack = () => {
@@ -63,18 +64,20 @@ export class AddNote extends React.Component {
         return <section className="display-note-container">
             <form onSubmit={onSaveNote} className="add-note-form">
 
-
-                <textarea
-                    name="text"
-                    id="text"
-                    placeholder="Take a note..."
-                    value={text}
-                    cols="35"
-                    rows="5"
-                    onChange={handleChange}>
-                </textarea>
-                <button className="btn btn-save">Save</button>
-
+               
+                    <textarea
+                        name="text"
+                        id="text"
+                        placeholder="Take a note..."
+                        value={text}
+                        cols="35"
+                        rows="5"
+                        onChange={handleChange}>
+                    </textarea>
+                    <div className="add-note-btns">
+                        <button className="btn btn-save">Save</button>
+                    </div>
+             
             </form>
         </section >
 

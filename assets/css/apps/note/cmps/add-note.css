@@ -21,6 +21,7 @@
     padding-top: 15px;
     border: none;
     background-color: var(--clr8);
+    display: flex;
 
 }
 
@@ -39,6 +40,23 @@ textarea:focus {
 
 .add-note-form .btn-save {
    position: absolute;
+    color: rgb(102, 102, 102);
+    cursor: pointer;
+    font-size: 1.3rem;
+    background: transparent;
+    border: none;
+    outline: none;
+    align-items: center;
+
 }
+
+.add-note-btns {
+    display: flex;
+    justify-content: end;
+    align-items: stretch;
+    
+}
+
+
 
 
