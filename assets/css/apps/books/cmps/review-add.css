@@ -1,0 +1,27 @@
+.reviews{
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    align-items: center;
+}
+
+.reviews input, select, textarea {
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid var(--clr16);
+    margin-top: 7px;
+    margin-bottom: 7px;
+    min-width: 32vw;
+
+}
+
+.book-details .review-container{
+    justify-content: center;
+}
+
+.reviews button.book-btns {
+    padding: 12px 20%;
+    margin-inline-start: 15px;
+}
+
+

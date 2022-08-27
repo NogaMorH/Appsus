@@ -1,0 +1,30 @@
+/* header {
+
+} */
+
+.book.app-header {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.25rem;
+    align-items: center;
+    background-color: var(--clr16);
+}
+
+.book.app-header nav>*{
+    margin-inline-end: 35px;
+    color: var(--clr14);
+}
+
+
+.book.app-header h3{
+    margin-inline-start: 20px;
+    cursor: pointer;
+    color: var(--clr14);
+
+}
+
+.book.app-header .active {
+    color:var(--clr18);
+    font-weight: bold;
+    font-family: Ubuntu-bold, sans-serif;
+}

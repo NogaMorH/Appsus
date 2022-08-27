@@ -1,0 +1,17 @@
+.book-filter {
+    margin-inline-start: 20px;
+}
+
+.book-filter .btn-search.book-btns{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+}
+
+.book-filter input{
+    padding: 6px;
+    margin: 15px;
+    width: 200px;
+    border-radius: 10px;
+}
+

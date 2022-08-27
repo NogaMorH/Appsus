@@ -24,7 +24,7 @@ const gNotes = [
             text: 'Fullstack Me Baby!'
         },
         style: {
-            backgroundColor: 'white'
+            backgroundColor: 'teal'
         }
     },
     {
@@ -118,7 +118,7 @@ const gNotes = [
             title: 'Bobi and Me'
         },
         style: {
-            backgroundColor: 'white'
+            backgroundColor: 'yellow'
         }
     },
     {
@@ -137,7 +137,7 @@ const gNotes = [
 ]
 
 function query(filterBy) {
-    console.log('filterBy:from query service', filterBy)
+    // console.log('filterBy:from query service', filterBy)
     let notes = _loadNotesFromStorage()
     if (!notes) {
         notes = gNotes
@@ -162,22 +162,22 @@ function query(filterBy) {
 }
 
 function remove(noteId) {
-    console.log('noteId:', noteId)
+    // console.log('noteId:', noteId)
     let notes = _loadNotesFromStorage()
-    console.log('notes:', notes)
+    // console.log('notes:', notes)
     notes = notes.filter(note => note.id !== noteId)
     _saveNotesToStorage(notes)
     return Promise.resolve()
 }
 
 function save(note) {
-    console.log('note from save:', note)
+    // console.log('note from save:', note)
     if (note.id) return updateNote(note)
     else return addNote(note)
 }
 
 function updateNote(noteToUpdate) {
-    console.log('noteToUpdate:', noteToUpdate)
+    // console.log('noteToUpdate:', noteToUpdate)
     let notes = _loadNotesFromStorage()
     notes = notes.map(note => note.id === noteToUpdate.id ? noteToUpdate : note)
     _saveNotesToStorage(notes)
@@ -187,21 +187,24 @@ function updateNote(noteToUpdate) {
 function addNote({ title, text, type, url }) {
     let notes = _loadNotesFromStorage()
     const note = createNote(title, text, type, url)
-    console.log('note:', note)
+    // console.log('note:', note)
     notes.unshift(note)
     _saveNotesToStorage(notes)
     return Promise.resolve({ ...note })
 }
 
 function createNote(title, text, type, url) {
-    console.log('type from service!!!!!:', type)
+    // console.log('type from service!!!!!:', type)
     let newNote = {
         id: utilService.makeId(),
         type,
         info: {
             title,
         },
-        isPinned: false
+        isPinned: false,
+        style:{
+            backgroundColor: 'white'
+        }
     }
     if (newNote.type === 'img' || newNote.type === 'video') {
         newNote.info.url = url
@@ -212,7 +215,7 @@ function createNote(title, text, type, url) {
 }
 
 function copyNote(note) {
-    console.log('note from servive copynote:', note)
+    // console.log('note from servive copynote:', note)
     const notes = _loadNotesFromStorage()
     const noteCopy = createNoteCopy(note)
     notes.unshift(noteCopy)
@@ -243,12 +246,15 @@ function getNoteById(noteId) {
     return Promise.resolve(note)
 }
 
-function setNoteBgColor(noteId, color){
+function setNoteBgColor(noteId, color) {
     const notes = _loadNotesFromStorage()
-    notes.forEach(note => {
-    if (note.id === noteId) note.style.backgroundColor = color})
+    const note = notes.find(note => noteId === note.id)
+    // console.log('note id from bg:', note)
+    note.style.backgroundColor = color
+    // console.log('notes:', notes)
+    // console.log('note.style.backgroundColor:', note.style.backgroundColor)
     _saveNotesToStorage(notes)
-    return Promise.resolve()
+
 }
 
 

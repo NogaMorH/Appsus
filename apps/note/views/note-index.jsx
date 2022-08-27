@@ -73,13 +73,13 @@ export class NoteIndex extends React.Component {
 
     render() {
         const { notes } = this.state
-        const { onRemoveNote, onSetFilter, setSelectedNote, onUpdateNote } = this
+        const { onRemoveNote, onSetFilter, setSelectedNote, onUpdateNote, onSetNoteBgColor } = this
         if (!notes) return <div>Loading...</div>
 
         // console.log('LENGTH:', this.state.notes.length);
         return (
             <section className="flex note-index">
-                <NoteSideNav />
+                {/* <NoteSideNav /> */}
                 <main className="flex main-content ">
                     <div className="input-container">
                         <AddNote saveNote={this.onUpdateNote} />

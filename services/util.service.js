@@ -6,6 +6,8 @@ export const utilService = {
     padNum,
     getDayName,
     getMonthName,
+    setCurrency,
+    getCurrDate
 }
 
 function makeId(length = 6) {
@@ -48,6 +50,7 @@ function getRandomColor() {
     return color
 }
 
+// getDayName('12/25/2021', 'he') ->  'יום שבת'
 function getDayName(date, locale) {
     date = new Date(date)
     return date.toLocaleDateString(locale, { weekday: 'long' })
@@ -59,4 +62,30 @@ function getMonthName(date) {
         "July", "August", "September", "October", "November", "December"
     ]
     return monthNames[date.getMonth()]
+}
+
+
+function setCurrency(currencyCode) {
+    switch (currencyCode) {
+        case 'EUR':
+            return '€';
+        case 'ILS':
+            return '₪';
+        case 'USD':
+            return '$'
+        default: '₪'
+            break;
+    }
+}
+
+
+function getCurrDate() {
+    const date = new Date()
+    const year = date.getFullYear()
+    let month = date.getMonth() + 1 +''
+    if (month.length < 2) month = 0 + month
+    let day = date.getDate() + ''
+    if (day.length < 2) day = 0 + day
+
+    return `${year}-${month}-${day}`
 }

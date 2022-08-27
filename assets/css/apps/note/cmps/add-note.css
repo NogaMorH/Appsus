@@ -1,13 +1,17 @@
 
-/* 
-.add-note-form input {
+.main-content .input-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
     width: 100%;
-} */
+
+}
 
 .add-note-form textarea {
     width: 100%;
     resize: none;
-    height: 50px;
+    height: 60px;
     padding-left: 10px;
     transition: all 0.5s ease;
     margin-top: 30px;
@@ -15,9 +19,10 @@
     position: relative;
     box-shadow: 1px 2px 6px 0 rgb(86 74 74 / 67%);
     padding-top: 15px;
+    border: none;
+    background-color: var(--clr8);
+    display: flex;
 
-    
-    
 }
 
 .add-note-form {
@@ -35,18 +40,23 @@ textarea:focus {
 
 .add-note-form .btn-save {
    position: absolute;
-}
-
-.main-content .input-container {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-
-}
-/* 
-.add-note-container .btn-container {
-    display: flex;
+    color: rgb(102, 102, 102);
+    cursor: pointer;
+    font-size: 1.3rem;
+    background: transparent;
+    border: none;
+    outline: none;
     align-items: center;
-    position: relative;
-} */
+
+}
+
+.add-note-btns {
+    display: flex;
+    justify-content: end;
+    align-items: stretch;
+    
+}
+
+
+
 

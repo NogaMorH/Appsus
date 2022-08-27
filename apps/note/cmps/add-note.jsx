@@ -14,12 +14,12 @@ export class AddNote extends React.Component {
         this.loadNote()
     }
 
-    componentDidUpdate(prevProps, prevState) {
-        if (!this.props.match) return
-        if (!prevProps.match.params.noteId !== this.props.match.params.noteId) {
-            this.loadNote()
-        }
-    }
+    // componentDidUpdate(prevProps, prevState) {
+    //     if (!this.props.match) return
+    //     if (!prevProps.match.params.noteId !== this.props.match.params.noteId) {
+    //         this.loadNote()
+    //     }
+    // }
 
     loadNote = () => {
         // console.log('this.props:', this.props)
@@ -46,12 +46,9 @@ export class AddNote extends React.Component {
 
     onSaveNote = (ev) => {
         ev.preventDefault()
-    this.props.saveNote(this.state.note)
-        // noteService.save(this.state.note)
-        // .then(() => {
-        //         if (!this.props.match) return
-        //         this.props.history.push('/note')
-        //     })
+        this.props.saveNote(this.state.note)
+        this.setState({note: {text: '', title:'', type:'text', isPinned: false}})
+
     }
 
     onGoBack = () => {
@@ -67,18 +64,20 @@ export class AddNote extends React.Component {
         return <section className="display-note-container">
             <form onSubmit={onSaveNote} className="add-note-form">
 
-
-                <textarea
-                    name="text"
-                    id="text"
-                    placeholder="Take a note..."
-                    value={text}
-                    cols="35"
-                    rows="5"
-                    onChange={handleChange}>
-                </textarea>
-                <button className="btn btn-save">Save</button>
-
+               
+                    <textarea
+                        name="text"
+                        id="text"
+                        placeholder="Take a note..."
+                        value={text}
+                        cols="35"
+                        rows="5"
+                        onChange={handleChange}>
+                    </textarea>
+                    <div className="add-note-btns">
+                        <button className="btn btn-save">Save</button>
+                    </div>
+             
             </form>
         </section >
 
