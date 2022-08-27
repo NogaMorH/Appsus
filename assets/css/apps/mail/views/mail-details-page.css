@@ -32,6 +32,7 @@
 
 .mail-details .mail-content {
     margin-left: 70px;
+    margin-right: 10px;
 }
 
 .mail-details .mail-content .title {
@@ -51,4 +52,30 @@
 
 .mail-details .mail-content .sender-address {
     color: var(--clr9);
+}
+
+.mail-details .time {
+    font-size: 0.875rem;
+    margin-bottom: 20px;
+}
+
+@media (max-width: 900px) {
+    .mail-details .mail-content {
+        margin-left: 40px;
+    }
+
+    .mail-details .mail-details-btns button:first-child {
+        margin-left: 20px;
+    }
+}
+
+@media (max-width:450px) {
+    .mail-details .mail-content {
+        margin-left: 20px;
+    }
+
+    .mail-details .mail-details-btns button:first-child {
+        margin-left: 0;
+    }
+
 }

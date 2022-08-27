@@ -2,3 +2,20 @@
     position: relative;
     flex-grow: 1;
 }
+
+.mail-index .hamburger-btn {
+    display: none;
+    border: none;
+    background-color: inherit;
+    padding: 10px;
+}
+
+.mail-index .hamburger-btn img {
+    width: 20px;
+}
+
+@media (max-width: 830px) {
+    .mail-index .hamburger-btn {
+        display: inline;
+    }
+}

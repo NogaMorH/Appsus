@@ -29,3 +29,17 @@
     padding-right: 10px;
     font-size: 0.80rem;
 }
+
+@media (max-width: 500px) {
+    .mail-preview .time {
+        display: none;
+    }
+
+    .mail-preview {
+        grid-template-columns: 25px 100px 1fr;
+    }
+
+    .mail-preview .mail-content {
+        padding: 0 10px;
+    }
+}

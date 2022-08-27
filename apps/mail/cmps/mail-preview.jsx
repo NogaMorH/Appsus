@@ -58,7 +58,7 @@ export class MailPreview extends React.Component {
             <Link to={"/mail/" + id} className="hide-long-text sender-name">
                 {senderName}
             </Link>
-            <Link to={"/mail/" + id} className="hide-long-text">
+            <Link to={"/mail/" + id} className="hide-long-text mail-content">
                 <span className="subject">{subject}</span> - {body}
             </Link>
             <Link to={"/mail/" + id} className="hide-long-text time">

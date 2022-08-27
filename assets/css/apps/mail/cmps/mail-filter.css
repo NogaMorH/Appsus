@@ -21,3 +21,17 @@
 .mail-filter:focus-visible {
     outline: none;
 }
+
+@media (max-width: 830px) {
+    .mail-filter-container {
+        display: flex;
+        align-items: center;
+        padding-left: 10px;
+    }
+}
+
+@media (max-width: 550px) {
+    .mail-filter {
+        width: 80%;
+    }
+}

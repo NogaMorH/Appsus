@@ -81,3 +81,15 @@
 .mail-compose .send-btn:hover {
     box-shadow: rgb(125 127 129 / 30%) 1px 3px 5px 0px, rgb(125 132 137 / 15%) 0px 1px 3px 1px;
 }
+
+@media (max-width: 750px) {
+    .mail-compose {
+        height: 100%;
+        right: 0;
+        left: 0;
+    }
+
+    .mail-compose .mail-compose-form {
+        width: 100%;
+    }
+}
