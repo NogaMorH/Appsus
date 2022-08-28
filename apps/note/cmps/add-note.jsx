@@ -70,7 +70,7 @@ export class AddNote extends React.Component {
                         onChange={handleChange}>
                     </textarea>
                     <div className="add-note-btns">
-                        <button className="btn btn-save">Save</button>
+                        <button className="btn btn-save">Add note</button>
                     </div>
              
             </form>
