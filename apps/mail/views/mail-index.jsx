@@ -74,7 +74,7 @@ export class MailIndex extends React.Component {
             <main>
                 <section className="mail-filter-container">
                     <button className="btn hamburger-btn" onClick={onToggleMenu}>
-                        <img src="../../../assets/img/hamburger.png" />
+                        <img src="./../../assets/img/hamburger.png" />
                     </button>
                     <MailFilter onSetFilter={onSetFilter} />
                 </section>

@@ -5,7 +5,8 @@ import { googleBookService } from '../services/google.book.service.js'
 import { BookDetails } from './book-details.jsx'
 import { AddBook } from '../cmps/book-add.jsx'
 import { showErrorMsg, showSuccessMsg } from '../services/event-bus.service.js'
-const {Link} = ReactRouterDOM
+import { eventBusService } from "../../../services/event-bus.service.js"
+const { Link } = ReactRouterDOM
 
 
 export class BookIndex extends React.Component {
@@ -17,6 +18,10 @@ export class BookIndex extends React.Component {
 
     componentDidMount() {
         this.loadBooks()
+        eventBusService.emit('open-page')
+    }
+    componentDidUpdate() {
+        eventBusService.emit('open-page')
     }
 
     loadBooks = () => {

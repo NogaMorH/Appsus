@@ -16,7 +16,7 @@ export class MailList extends React.Component {
         const { mails } = this.props
         return <main className="main-layout mail-list-container">
             <button className="btn mail-control-btn" onClick={() => this.props.onRemoveMail(this.state.selectedMails)}>
-                <img src="../../../assets/img/trash.png" alt="delete email" />
+                <img src="./../assets/img/trash.png" alt="delete email" />
             </button>
             <ul className="flex mail-list">
                 {mails.map(mail => <MailPreview key={mail.id} mail={mail}

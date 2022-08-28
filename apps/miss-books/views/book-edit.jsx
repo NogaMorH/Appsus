@@ -1,4 +1,5 @@
 import { bookService } from "../services/book.service"
+import { eventBusService } from "../../../services/event-bus.service.js"
 
 export class BookEdit extends React.Component {
 
@@ -8,6 +9,14 @@ export class BookEdit extends React.Component {
             author: '',
             price: '',
         }
+    }
+
+    componentDidMount() {
+        eventBusService.emit('open-page')
+    }
+
+    componentDidUpdate() {
+        eventBusService.emit('open-page')
     }
 
     handleChange = ({ target }) => {
@@ -25,16 +34,16 @@ export class BookEdit extends React.Component {
     onSaveBook = (ev) => {
         ev.preventDefault()
         bookService.save(this.state.book)
-        .then(() => {
-            this.props.history.push('/book')
-        })
+            .then(() => {
+                this.props.history.push('/book')
+            })
 
     }
 
 
     render() {
         const { title, author, price } = this.state.book
-        const {onSaveBook, handleChange} = this
+        const { onSaveBook, handleChange } = this
         return <section className="book-edit">
             <form onSubmit={onSaveBook}>
 

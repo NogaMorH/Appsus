@@ -6,7 +6,7 @@ import { NoteIndex } from "./apps/note/views/note-index.jsx"
 import { MailDetails } from "./apps/mail/views/mail-details.jsx"
 import { BookIndex } from "./apps/miss-books/views/book-index.jsx"
 import { BookDetails } from "./apps/miss-books/views/book-details.jsx"
-import {BookEdit} from "./apps/miss-books/views/book-edit.jsx"
+import { BookEdit } from "./apps/miss-books/views/book-edit.jsx"
 
 const Router = ReactRouterDOM.HashRouter
 const { Route, Switch } = ReactRouterDOM

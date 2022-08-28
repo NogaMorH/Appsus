@@ -66,6 +66,7 @@ export class MailDetails extends React.Component {
         this.onGoBack()
     }
 
+
     render() {
         if (!this.state.mail) return <div></div>
         const { composeOpened } = this.state
@@ -76,10 +77,10 @@ export class MailDetails extends React.Component {
             <main className="flex mail-details">
                 <div className="mail-details-btns">
                     <button onClick={this.onGoBack} className="btn mail-control-btn">
-                        <img src="../../../assets/img/arrow.png" alt="Go back" />
+                        <img src="./../../assets/img/arrow.png" alt="Go back" />
                     </button>
                     <button onClick={this.onRemoveMail} className="btn mail-control-btn">
-                        <img src="../../../assets/img/trash.png" />
+                        <img src="./../../assets/img/trash.png" />
                     </button>
                 </div>
                 <div className="mail-content">
@@ -89,7 +90,7 @@ export class MailDetails extends React.Component {
                         <span className="sender-address">{senderAddress}</span>
                     </div>
                     <div className="time">{this.setTimeForDisplay()}</div>
-                    <p>{body}</p>
+                    <p className="mail-body">{body}</p>
                 </div>
             </main>
             {composeOpened && <MailCompose closeCompose={this.closeCompose} />}
