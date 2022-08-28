@@ -96,7 +96,7 @@ const gNotes = [
             text: 'https://css-tricks.com/snippets/css/a-guide-to-flexbox/'
         },
         style: {
-            backgroundColor: 'red'
+            backgroundColor: 'red1'
         }
     },
     {
