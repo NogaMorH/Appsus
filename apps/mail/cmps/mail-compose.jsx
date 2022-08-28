@@ -37,7 +37,7 @@ export class MailCompose extends React.Component {
             <header className="mail-compose-header">
                 New message
                 <button className="btn close-btn" onClick={closeCompose}>
-                    <img src="./../../assets/img/close.svg" />
+                    <img src="./assets/img/close.svg" />
                 </button>
             </header>
             <form className="mail-compose-form" onSubmit={this.onAddMail}>
